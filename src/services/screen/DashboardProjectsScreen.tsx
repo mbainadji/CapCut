@@ -9,10 +9,11 @@ import {
   Dimensions, 
   Alert, 
   ActivityIndicator,
-  TextInput
+  TextInput,
+  Platform
 } from 'react-native';
 import { launchImageLibrary } from 'react-native-image-picker';
-import { supabase } from '../services/supabaseClient';
+import { supabase } from '../supabaseClient';
 
 const { width } = Dimensions.get('window');
 
@@ -106,6 +107,11 @@ export default function DashboardProjectsScreen({ navigation }: any) {
 
   // ✏️ 4. MODIFICATION / RENOMMAGE (Fonctionnalité Développeur 2)
   const renommerProjet = (id: string, nomActuel: string) => {
+    if (Platform.OS === 'android') {
+      // Alert.prompt n'existe pas sur Android, une alternative simple :
+      Alert.alert("Info", "Le renommage nécessite une interface de saisie personnalisée sur Android.");
+      return;
+    }
     Alert.prompt(
       "Renommer le projet",
       "Entrez le nouveau nom de votre montage :",

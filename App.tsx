@@ -2,8 +2,8 @@ import React from 'react';
 import { StatusBar, StyleSheet, View } from 'react-native';
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 
-// Importation de votre écran de gestion des projets (Développeur 2)
-import DashboardProjectsScreen from './src/screens/DashboardProjectsScreen';
+// Importation de votre écran de gestion des projets
+import DashboardProjectsScreen from './src/services/screen/DashboardProjectsScreen';
 
 function App() {
   return (
