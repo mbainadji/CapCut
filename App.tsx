@@ -4,7 +4,7 @@ import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-cont
 import { NavigationContainer } from '@react-navigation/native';
 import { useAuth } from './src/hooks/useAuth';
 import AuthNavigator from './src/navigation/AuthNavigator';
-import ProfileScreen from './src/screens/auth/ProfileScreen';
+import ProfileScreen from './src/screens/profile/ProfileScreen';
 import DashboardProjectsScreen from './src/services/screen/DashboardProjectsScreen';
 
 function RootNavigator() {
