@@ -1,0 +1,9 @@
+{
+  "java.project.sourcePaths": [],
+  "java.import.exclusions": [
+    "**/node_modules/**",
+    "**/android/**",
+    "**/ios/**"
+  ],
+  "java.configuration.updateBuildConfiguration": "disabled"
+}
