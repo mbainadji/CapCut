@@ -1,4 +1,3 @@
-// src/services/authService.ts
 import { supabase } from './supabase';
 
 // ── Inscription ──────────────────────────────────────────────────────────────
@@ -11,6 +10,18 @@ export async function register(fullName: string, email: string, password: string
     },
   });
   if (error) throw error;
+
+  // Créer le profil dans la table profiles
+  if (data.user) {
+    await supabase.from('profiles').upsert({
+      id: data.user.id,
+      full_name: fullName,
+      username: email.split('@')[0],
+      avatar_url: null,
+      updated_at: new Date().toISOString(),
+    });
+  }
+
   return data;
 }
 
@@ -54,10 +65,19 @@ export async function resetPassword(email: string) {
 
 // ── Modifier le profil ───────────────────────────────────────────────────────
 export async function updateProfile(fullName: string) {
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) throw new Error('Non connecté');
+
   const { error } = await supabase.auth.updateUser({
     data: { full_name: fullName },
   });
   if (error) throw error;
+
+  await supabase.from('profiles').upsert({
+    id: user.id,
+    full_name: fullName,
+    updated_at: new Date().toISOString(),
+  });
 }
 
 // ── Modifier le mot de passe ─────────────────────────────────────────────────
@@ -77,4 +97,19 @@ export async function getSession() {
   const { data, error } = await supabase.auth.getSession();
   if (error) throw error;
   return data.session;
+}
+
+// ── Récupérer le profil ──────────────────────────────────────────────────────
+export async function getProfile() {
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) return null;
+
+  const { data, error } = await supabase
+    .from('profiles')
+    .select('*')
+    .eq('id', user.id)
+    .single();
+
+  if (error) return null;
+  return data;
 }

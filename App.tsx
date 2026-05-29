@@ -4,8 +4,7 @@ import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-cont
 import { NavigationContainer } from '@react-navigation/native';
 import { useAuth } from './src/hooks/useAuth';
 import AuthNavigator from './src/navigation/AuthNavigator';
-import ProfileScreen from './src/screens/profile/ProfileScreen';
-import DashboardProjectsScreen from './src/services/screen/DashboardProjectsScreen';
+import HomeNavigator from './src/navigation/HomeNavigator';
 
 function RootNavigator() {
   const { session, loading } = useAuth();
@@ -18,8 +17,7 @@ function RootNavigator() {
     );
   }
 
-  // Si connecté → Dashboard, sinon → Auth
-  return session ? <DashboardProjectsScreen /> : <AuthNavigator />;
+  return session ? <HomeNavigator /> : <AuthNavigator />;
 }
 
 function AppContent() {
@@ -43,14 +41,9 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#0A0A0A',
-  },
+  container: { flex: 1, backgroundColor: '#0A0A0A' },
   loading: {
-    flex: 1,
-    backgroundColor: '#0A0A0A',
-    alignItems: 'center',
-    justifyContent: 'center',
+    flex: 1, backgroundColor: '#0A0A0A',
+    alignItems: 'center', justifyContent: 'center',
   },
 });
