@@ -1,8 +1,10 @@
+import './src/locales/i18n';
 import React from 'react';
 import { StatusBar, StyleSheet, View, ActivityIndicator } from 'react-native';
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
 import { useAuth } from './src/hooks/useAuth';
+import { ThemeProvider, colors } from './src/context/ThemeContext';
 import AuthNavigator from './src/navigation/AuthNavigator';
 import HomeNavigator from './src/navigation/HomeNavigator';
 
@@ -11,8 +13,8 @@ function RootNavigator() {
 
   if (loading) {
     return (
-      <View style={styles.loading}>
-        <ActivityIndicator size="large" color="#7C3AFF" />
+      <View style={s.loading}>
+        <ActivityIndicator size="large" color={colors.primary} />
       </View>
     );
   }
@@ -23,7 +25,8 @@ function RootNavigator() {
 function AppContent() {
   const insets = useSafeAreaInsets();
   return (
-    <View style={[styles.container, { paddingTop: insets.top, paddingBottom: insets.bottom }]}>
+    <View style={[s.container, { paddingTop: insets.top, paddingBottom: insets.bottom }]}>
+      <StatusBar barStyle="dark-content" backgroundColor={colors.background} />
       <NavigationContainer>
         <RootNavigator />
       </NavigationContainer>
@@ -33,17 +36,15 @@ function AppContent() {
 
 export default function App() {
   return (
-    <SafeAreaProvider>
-      <StatusBar barStyle="light-content" backgroundColor="#0A0A0A" />
-      <AppContent />
-    </SafeAreaProvider>
+    <ThemeProvider>
+      <SafeAreaProvider>
+        <AppContent />
+      </SafeAreaProvider>
+    </ThemeProvider>
   );
 }
 
-const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#0A0A0A' },
-  loading: {
-    flex: 1, backgroundColor: '#0A0A0A',
-    alignItems: 'center', justifyContent: 'center',
-  },
+const s = StyleSheet.create({
+  container: { flex: 1, backgroundColor: colors.background },
+  loading: { flex: 1, backgroundColor: colors.background, alignItems: 'center', justifyContent: 'center' },
 });

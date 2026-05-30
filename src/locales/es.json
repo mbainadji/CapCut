@@ -1,0 +1,77 @@
+{
+  "dashboard": {
+    "titre": "CapCut Studio",
+    "nouvelle_video": "Nuevo video",
+    "editer_photo": "Editar foto",
+    "projets": "Proyectos",
+    "rechercher": "Buscar proyecto...",
+    "aucun_projet": "Tus proyectos aparecerán aquí.\nEmpieza a crear ahora.",
+    "nouveau_projet": "Nuevo proyecto"
+  },
+  "outils": {
+    "decoupage": "Corte\nautomático",
+    "retouche": "Retoque",
+    "ia": "Generador IA",
+    "legendes": "Subtítulos\nautomáticos",
+    "editeur_pc": "Editor de\nescritorio",
+    "suppression_bg": "Eliminar\nfondo",
+    "qualite": "Mejorar\ncalidad",
+    "tous": "Todas las herramientas"
+  },
+  "editeur": {
+    "titre": "Editor",
+    "exporter": "Exportar",
+    "couper": "✂️ Cortar",
+    "vitesse": "⚡ Velocidad",
+    "volume": "🔊 Volumen",
+    "filtre": "🎨 Filtro",
+    "texte": "💬 Texto",
+    "musique": "🎵 Música",
+    "debut": "Inicio",
+    "fin": "Fin",
+    "duree": "Duración",
+    "enregistrer": "Guardar en teléfono",
+    "export_succes": "¡Video exportado con éxito!",
+    "sauvegarde_auto": "Guardado automático activado"
+  },
+  "profil": {
+    "titre": "Perfil",
+    "projets": "Proyectos",
+    "videos": "Videos",
+    "vues": "Vistas",
+    "compte": "Cuenta",
+    "securite": "Seguridad",
+    "preferences": "Preferencias",
+    "deconnexion": "Cerrar sesión",
+    "modifier_profil": "Editar nombre",
+    "photo_profil": "Foto de perfil",
+    "notifications": "Notificaciones push",
+    "langue": "Idioma y región",
+    "appareils": "Dispositivos conectados",
+    "theme": "Tema oscuro / claro",
+    "qualite_export": "Calidad de exportación",
+    "sauvegarde": "Guardado automático",
+    "supprimer_compte": "Eliminar mi cuenta"
+  },
+  "auth": {
+    "connexion": "Iniciar sesión",
+    "inscription": "Crear cuenta",
+    "email": "Correo electrónico",
+    "mot_de_passe": "Contraseña",
+    "nom_complet": "Nombre completo",
+    "deja_compte": "¿Ya tienes cuenta?",
+    "pas_compte": "¿No tienes cuenta?",
+    "mot_de_passe_oublie": "¿Olvidaste tu contraseña?"
+  },
+  "commun": {
+    "annuler": "Cancelar",
+    "enregistrer": "Guardar",
+    "supprimer": "Eliminar",
+    "retour": "Volver",
+    "fermer": "Cerrar",
+    "appliquer": "Aplicar",
+    "chargement": "Cargando...",
+    "erreur": "Error",
+    "succes": "Éxito"
+  }
+}

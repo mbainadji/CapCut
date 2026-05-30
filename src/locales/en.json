@@ -1,0 +1,77 @@
+{
+  "dashboard": {
+    "titre": "CapCut Studio",
+    "nouvelle_video": "New video",
+    "editer_photo": "Edit photo",
+    "projets": "Projects",
+    "rechercher": "Search a project...",
+    "aucun_projet": "Your projects will appear here.\nStart creating now.",
+    "nouveau_projet": "New project"
+  },
+  "outils": {
+    "decoupage": "Auto\ncut",
+    "retouche": "Retouch",
+    "ia": "AI Generator",
+    "legendes": "Auto\ncaptions",
+    "editeur_pc": "Desktop\neditor",
+    "suppression_bg": "Remove\nbackground",
+    "qualite": "Enhance\nquality",
+    "tous": "All tools"
+  },
+  "editeur": {
+    "titre": "Editor",
+    "exporter": "Export",
+    "couper": "✂️ Cut",
+    "vitesse": "⚡ Speed",
+    "volume": "🔊 Volume",
+    "filtre": "🎨 Filter",
+    "texte": "💬 Text",
+    "musique": "🎵 Music",
+    "debut": "Start",
+    "fin": "End",
+    "duree": "Duration",
+    "enregistrer": "Save to phone",
+    "export_succes": "Video exported successfully!",
+    "sauvegarde_auto": "Auto-save enabled"
+  },
+  "profil": {
+    "titre": "Profile",
+    "projets": "Projects",
+    "videos": "Videos",
+    "vues": "Views",
+    "compte": "Account",
+    "securite": "Security",
+    "preferences": "Preferences",
+    "deconnexion": "Sign out",
+    "modifier_profil": "Edit name",
+    "photo_profil": "Profile photo",
+    "notifications": "Push notifications",
+    "langue": "Language & region",
+    "appareils": "Connected devices",
+    "theme": "Dark / light theme",
+    "qualite_export": "Default export quality",
+    "sauvegarde": "Auto-save",
+    "supprimer_compte": "Delete my account"
+  },
+  "auth": {
+    "connexion": "Sign in",
+    "inscription": "Create account",
+    "email": "Email",
+    "mot_de_passe": "Password",
+    "nom_complet": "Full name",
+    "deja_compte": "Already have an account?",
+    "pas_compte": "Don't have an account?",
+    "mot_de_passe_oublie": "Forgot password?"
+  },
+  "commun": {
+    "annuler": "Cancel",
+    "enregistrer": "Save",
+    "supprimer": "Delete",
+    "retour": "Back",
+    "fermer": "Close",
+    "appliquer": "Apply",
+    "chargement": "Loading...",
+    "erreur": "Error",
+    "succes": "Success"
+  }
+}

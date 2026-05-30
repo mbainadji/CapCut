@@ -113,3 +113,18 @@ export async function getProfile() {
   if (error) return null;
   return data;
 }
+
+// ── Supprimer le compte ───────────────────────────────────────────────────────
+export async function deleteAccount() {
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) throw new Error('Non connecté');
+
+  // Supprimer les données utilisateur
+  await supabase.from('projets').delete().eq('user_id', user.id);
+  await supabase.from('medias_secondaires').delete().eq('user_id', user.id);
+  await supabase.from('exportations').delete().eq('user_id', user.id);
+  await supabase.from('profiles').delete().eq('id', user.id);
+
+  // Déconnexion
+  await supabase.auth.signOut();
+}

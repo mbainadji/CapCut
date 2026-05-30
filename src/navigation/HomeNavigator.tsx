@@ -5,10 +5,13 @@ import { Text } from 'react-native';
 import DashboardProjectsScreen from '../services/screen/DashboardProjectsScreen';
 import ProfileScreen from '../screens/profile/ProfileScreen';
 import EditProjectScreen from '../screens/project/EditProjectScreen';
+import VideoEditorScreen from '../screens/editor/VideoEditorScreen';
+import { colors } from '../context/ThemeContext';
 
 export type HomeStackParamList = {
   Dashboard: undefined;
   EditProject: { projectId: string };
+  VideoEditor: { projetId: string; videoUri: string; nomProjet: string };
   Profile: undefined;
 };
 
@@ -26,13 +29,15 @@ function TabNavigator() {
       screenOptions={{
         headerShown: false,
         tabBarStyle: {
-          backgroundColor: '#0A0A0A',
-          borderTopColor: '#1A1A1A',
+          backgroundColor: colors.white,
+          borderTopColor: colors.border,
+          borderTopWidth: 1,
           height: 60,
           paddingBottom: 8,
+          elevation: 8,
         },
-        tabBarActiveTintColor: '#7C3AFF',
-        tabBarInactiveTintColor: '#444',
+        tabBarActiveTintColor: colors.primary,
+        tabBarInactiveTintColor: colors.inactive,
       }}
     >
       <Tab.Screen
@@ -60,6 +65,7 @@ export default function HomeNavigator() {
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Dashboard" component={TabNavigator} />
       <Stack.Screen name="EditProject" component={EditProjectScreen} />
+      <Stack.Screen name="VideoEditor" component={VideoEditorScreen} />
     </Stack.Navigator>
   );
 }

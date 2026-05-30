@@ -1,0 +1,77 @@
+{
+  "dashboard": {
+    "titre": "CapCut Studio",
+    "nouvelle_video": "Nouvelle vidéo",
+    "editer_photo": "Éditer la photo",
+    "projets": "Projets",
+    "rechercher": "Rechercher un projet...",
+    "aucun_projet": "Tes projets apparaîtront ici.\nCommence à créer dès maintenant.",
+    "nouveau_projet": "Nouveau projet"
+  },
+  "outils": {
+    "decoupage": "Découpage\nautomatique",
+    "retouche": "Retouche",
+    "ia": "Générateur IA",
+    "legendes": "Légendes\nautomatiques",
+    "editeur_pc": "Éditeur sur\nordinateur",
+    "suppression_bg": "Supprimer\nl'arrière-plan",
+    "qualite": "Améliorer la\nqualité",
+    "tous": "Tous les outils"
+  },
+  "editeur": {
+    "titre": "Éditeur",
+    "exporter": "Exporter",
+    "couper": "✂️ Couper",
+    "vitesse": "⚡ Vitesse",
+    "volume": "🔊 Volume",
+    "filtre": "🎨 Filtre",
+    "texte": "💬 Texte",
+    "musique": "🎵 Musique",
+    "debut": "Début",
+    "fin": "Fin",
+    "duree": "Durée",
+    "enregistrer": "Enregistrer sur téléphone",
+    "export_succes": "Vidéo exportée avec succès !",
+    "sauvegarde_auto": "Sauvegarde automatique activée"
+  },
+  "profil": {
+    "titre": "Profil",
+    "projets": "Projets",
+    "videos": "Vidéos",
+    "vues": "Vues",
+    "compte": "Compte",
+    "securite": "Sécurité",
+    "preferences": "Préférences",
+    "deconnexion": "Se déconnecter",
+    "modifier_profil": "Modifier le nom",
+    "photo_profil": "Photo de profil",
+    "notifications": "Notifications push",
+    "langue": "Langue & région",
+    "appareils": "Appareils connectés",
+    "theme": "Thème sombre / clair",
+    "qualite_export": "Qualité d'export par défaut",
+    "sauvegarde": "Sauvegarde automatique",
+    "supprimer_compte": "Supprimer mon compte"
+  },
+  "auth": {
+    "connexion": "Se connecter",
+    "inscription": "Créer mon compte",
+    "email": "Email",
+    "mot_de_passe": "Mot de passe",
+    "nom_complet": "Nom complet",
+    "deja_compte": "Déjà un compte ?",
+    "pas_compte": "Pas encore de compte ?",
+    "mot_de_passe_oublie": "Mot de passe oublié ?"
+  },
+  "commun": {
+    "annuler": "Annuler",
+    "enregistrer": "Enregistrer",
+    "supprimer": "Supprimer",
+    "retour": "Retour",
+    "fermer": "Fermer",
+    "appliquer": "Appliquer",
+    "chargement": "Chargement...",
+    "erreur": "Erreur",
+    "succes": "Succès"
+  }
+}
