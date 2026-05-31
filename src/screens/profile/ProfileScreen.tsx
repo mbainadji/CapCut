@@ -11,11 +11,12 @@ import { updateProfile, updatePassword, logout, deleteAccount } from '../../serv
 import { supabase } from '../../services/supabase';
 import { useTheme, colors } from '../../context/ThemeContext';
 import { useFocusEffect } from '@react-navigation/native';
+import { getOfflineProjects } from '../../services/offlineProjectService';
 
 type Tab = 'compte' | 'securite' | 'preferences';
 
 export default function ProfileScreen() {
-  const { user } = useAuth();
+  const { user, offlineMode } = useAuth();
   const { notifPush, setNotifPush, sauvegardeAuto, setSauvegardeAuto } = useTheme();
   const [activeTab, setActiveTab] = useState<Tab>('compte');
   const [editName, setEditName] = useState(false);
@@ -32,17 +33,31 @@ export default function ProfileScreen() {
   const chargerProfil = useCallback(async () => {
     if (!user) return;
     try {
+      if (offlineMode) {
+        setName(user.user_metadata?.full_name || '');
+        return;
+      }
       const { data } = await supabase.from('profiles').select('*').eq('id', user.id).single();
       if (data) {
         setAvatarUrl(data.avatar_url);
         setName(data.full_name || user?.user_metadata?.full_name || '');
       }
     } catch {}
-  }, [user]);
+  }, [offlineMode, user]);
 
   const chargerStats = useCallback(async () => {
     if (!user) return;
     try {
+      if (offlineMode) {
+        const projects = await getOfflineProjects();
+        const videos = projects.filter(project => project.video_source_url).length;
+        setStats({
+          projets: projects.length,
+          videos,
+          vues: videos * 3,
+        });
+        return;
+      }
       const { count: nbProjets } = await supabase
         .from('projets').select('*', { count: 'exact', head: true }).eq('user_id', user.id);
       const { count: nbExports } = await supabase
@@ -57,7 +72,7 @@ export default function ProfileScreen() {
         vues: (nbExports || 0) * 12 + (nbProjets || 0) * 3,
       });
     } catch {}
-  }, [user]);
+  }, [offlineMode, user]);
 
   // Recharger les stats à chaque fois que l'écran est focus
   useFocusEffect(
@@ -111,6 +126,11 @@ export default function ProfileScreen() {
 
           setUploadingAvatar(true);
           try {
+            if (offlineMode) {
+              setAvatarUrl(asset.uri || null);
+              Alert.alert('✅', 'Photo de profil locale mise à jour !');
+              return;
+            }
             const fileExt = asset.fileName?.split('.').pop() || 'jpg';
             const filePath = `avatars/${user.id}_${Date.now()}.${fileExt}`;
 

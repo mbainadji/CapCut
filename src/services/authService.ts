@@ -1,4 +1,37 @@
 import { supabase } from './supabase';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { DeviceEventEmitter } from 'react-native';
+import { clearOfflineProjects } from './offlineProjectService';
+
+export const OFFLINE_SESSION_KEY = 'clipx.offline.session';
+export const LOCAL_AUTH_EVENT = 'clipx.local-auth-change';
+
+export type OfflineUser = {
+  id: string;
+  email: string;
+  user_metadata: { full_name: string };
+  app_metadata: { provider: string };
+};
+
+export async function getOfflineUser(): Promise<OfflineUser | null> {
+  const raw = await AsyncStorage.getItem(OFFLINE_SESSION_KEY);
+  return raw ? JSON.parse(raw) : null;
+}
+
+export async function isOfflineMode() {
+  return !!(await getOfflineUser());
+}
+
+export async function enterOfflineMode() {
+  const user: OfflineUser = {
+    id: 'offline-user',
+    email: 'mode.hors.connexion@local',
+    user_metadata: { full_name: 'Utilisateur hors connexion' },
+    app_metadata: { provider: 'hors connexion' },
+  };
+  await AsyncStorage.setItem(OFFLINE_SESSION_KEY, JSON.stringify(user));
+  DeviceEventEmitter.emit(LOCAL_AUTH_EVENT);
+}
 
 // ── Inscription ──────────────────────────────────────────────────────────────
 export async function register(fullName: string, email: string, password: string) {
@@ -65,6 +98,16 @@ export async function resetPassword(email: string) {
 
 // ── Modifier le profil ───────────────────────────────────────────────────────
 export async function updateProfile(fullName: string) {
+  const offlineUser = await getOfflineUser();
+  if (offlineUser) {
+    await AsyncStorage.setItem(OFFLINE_SESSION_KEY, JSON.stringify({
+      ...offlineUser,
+      user_metadata: { ...offlineUser.user_metadata, full_name: fullName },
+    }));
+    DeviceEventEmitter.emit(LOCAL_AUTH_EVENT);
+    return;
+  }
+
   const { data: { user } } = await supabase.auth.getUser();
   if (!user) throw new Error('Non connecté');
 
@@ -82,12 +125,19 @@ export async function updateProfile(fullName: string) {
 
 // ── Modifier le mot de passe ─────────────────────────────────────────────────
 export async function updatePassword(newPassword: string) {
+  if (await isOfflineMode()) throw new Error('Mot de passe indisponible en mode hors connexion');
   const { error } = await supabase.auth.updateUser({ password: newPassword });
   if (error) throw error;
 }
 
 // ── Déconnexion ──────────────────────────────────────────────────────────────
 export async function logout() {
+  const offline = await isOfflineMode();
+  if (offline) {
+    await AsyncStorage.removeItem(OFFLINE_SESSION_KEY);
+    DeviceEventEmitter.emit(LOCAL_AUTH_EVENT);
+    return;
+  }
   const { error } = await supabase.auth.signOut();
   if (error) throw error;
 }
@@ -116,6 +166,13 @@ export async function getProfile() {
 
 // ── Supprimer le compte ───────────────────────────────────────────────────────
 export async function deleteAccount() {
+  if (await isOfflineMode()) {
+    await clearOfflineProjects();
+    await AsyncStorage.removeItem(OFFLINE_SESSION_KEY);
+    DeviceEventEmitter.emit(LOCAL_AUTH_EVENT);
+    return;
+  }
+
   const { data: { user } } = await supabase.auth.getUser();
   if (!user) throw new Error('Non connecté');
 

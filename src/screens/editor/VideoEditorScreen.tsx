@@ -9,6 +9,8 @@ import RNFS from 'react-native-fs';
 import { supabase } from '../../services/supabase';
 import { colors } from '../../context/ThemeContext';
 import { useTheme } from '../../context/ThemeContext';
+import { getOfflineUser, isOfflineMode } from '../../services/authService';
+import { getOfflineProject, updateOfflineProject } from '../../services/offlineProjectService';
 
 const RESEAUX_DUREE = [
   { nom: 'TikTok 🎵', max: 15, couleur: '#010101' },
@@ -75,7 +77,9 @@ export default function VideoEditorScreen({ navigation, route }: any) {
 
   const chargerEffetsSauvegardes = useCallback(async () => {
     try {
-      const { data } = await supabase.from('projets').select('timeline_data').eq('id', projetId).single();
+      const data = await isOfflineMode()
+        ? await getOfflineProject(projetId)
+        : (await supabase.from('projets').select('timeline_data').eq('id', projetId).single()).data;
       if (data?.timeline_data) {
         const td = data.timeline_data;
         if (td.trimStart !== undefined) setTrimStart(td.trimStart);
@@ -94,15 +98,20 @@ export default function VideoEditorScreen({ navigation, route }: any) {
 
   const sauvegarderAuto = useCallback(async () => {
     try {
-      await supabase.from('projets').update({
-        timeline_data: {
-          trimStart, trimEnd, volume, vitesse,
-          filtre: filtreActif.id,
-          effets: effetsActifs,
-          sousTitre,
-        },
-        updated_at: new Date().toISOString(),
-      }).eq('id', projetId);
+      const timeline_data = {
+        trimStart, trimEnd, volume, vitesse,
+        filtre: filtreActif.id,
+        effets: effetsActifs,
+        sousTitre,
+      };
+      if (await isOfflineMode()) {
+        await updateOfflineProject(projetId, { timeline_data });
+      } else {
+        await supabase.from('projets').update({
+          timeline_data,
+          updated_at: new Date().toISOString(),
+        }).eq('id', projetId);
+      }
       setDerniereSauvegarde(new Date());
     } catch {}
   }, [effetsActifs, filtreActif.id, projetId, sousTitre, trimEnd, trimStart, vitesse, volume]);
@@ -194,11 +203,18 @@ export default function VideoEditorScreen({ navigation, route }: any) {
           style: 'destructive',
           onPress: async () => {
             try {
-              await supabase.from('projets').update({
-                video_source_url: null,
-                timeline_data: null,
-                updated_at: new Date().toISOString(),
-              }).eq('id', projetId);
+              if (await isOfflineMode()) {
+                await updateOfflineProject(projetId, {
+                  video_source_url: null,
+                  timeline_data: null,
+                });
+              } else {
+                await supabase.from('projets').update({
+                  video_source_url: null,
+                  timeline_data: null,
+                  updated_at: new Date().toISOString(),
+                }).eq('id', projetId);
+              }
               Alert.alert('✅', 'Vidéo supprimée du projet.');
               navigation.goBack();
             } catch (e: any) {
@@ -273,15 +289,19 @@ export default function VideoEditorScreen({ navigation, route }: any) {
     await sauvegarderAuto();
     setLoading(true);
     try {
-      const { data: { user } } = await supabase.auth.getUser();
+      const user = await isOfflineMode()
+        ? await getOfflineUser()
+        : (await supabase.auth.getUser()).data.user;
       if (!user) return;
-      await supabase.from('exportations').insert([{
-        projet_id: projetId,
-        user_id: user.id,
-        statut: 'termine',
-        video_finale_url: videoUri,
-        taille_octets: 0,
-      }]);
+      if (!(await isOfflineMode())) {
+        await supabase.from('exportations').insert([{
+          projet_id: projetId,
+          user_id: user.id,
+          statut: 'termine',
+          video_finale_url: videoUri,
+          taille_octets: 0,
+        }]);
+      }
       Alert.alert('✅ Exporté !', `Effets appliqués : ${effetsActifs.length}\nFiltre : ${filtreActif.nom}`, [
         { text: '📱 Enregistrer sur téléphone', onPress: enregistrerSurTelephone },
         { text: 'Retour', onPress: () => navigation.goBack() },

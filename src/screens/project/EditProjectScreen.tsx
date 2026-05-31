@@ -8,6 +8,8 @@ import { launchImageLibrary } from 'react-native-image-picker';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RouteProp } from '@react-navigation/native';
 import { HomeStackParamList } from '../../navigation/HomeNavigator';
+import { isOfflineMode } from '../../services/authService';
+import { getOfflineProject, updateOfflineProject } from '../../services/offlineProjectService';
 
 type Props = {
   navigation: NativeStackNavigationProp<HomeStackParamList, 'EditProject'>;
@@ -24,6 +26,14 @@ export default function EditProjectScreen({ navigation, route }: Props) {
 
   const chargerProjet = useCallback(async () => {
     try {
+      if (await isOfflineMode()) {
+        const data = await getOfflineProject(projectId);
+        if (!data) throw new Error('Projet local introuvable');
+        setNom(data.nom || '');
+        setMiniatureUrl(data.miniature_url || '');
+        setVideoUrl(data.video_source_url || '');
+        return;
+      }
       const { data, error } = await supabase
         .from('projets')
         .select('*')
@@ -51,6 +61,12 @@ export default function EditProjectScreen({ navigation, route }: Props) {
     }
     setSaving(true);
     try {
+      if (await isOfflineMode()) {
+        await updateOfflineProject(projectId, { nom: nom.trim() });
+        Alert.alert('Succès', 'Projet sauvegardé hors connexion');
+        navigation.goBack();
+        return;
+      }
       const { error } = await supabase
         .from('projets')
         .update({
@@ -73,6 +89,12 @@ export default function EditProjectScreen({ navigation, route }: Props) {
     if (result.assets && result.assets[0]) {
       try {
       const asset = result.assets[0];
+      if (await isOfflineMode()) {
+        await updateOfflineProject(projectId, { miniature_url: asset.uri });
+        setMiniatureUrl(asset.uri || '');
+        Alert.alert('Succès', 'Miniature locale mise à jour');
+        return;
+      }
       const { data: { user } } = await supabase.auth.getUser();
       if (!user) return;
 

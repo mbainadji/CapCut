@@ -3,6 +3,7 @@ import { View, Text, TouchableOpacity, StyleSheet, SafeAreaView, StatusBar } fro
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { AuthStackParamList } from '../../navigation/AuthNavigator';
 import { colors } from '../../context/ThemeContext';
+import { enterOfflineMode } from '../../services/authService';
 
 type Props = { navigation: NativeStackNavigationProp<AuthStackParamList, 'Welcome'> };
 
@@ -28,6 +29,9 @@ export default function WelcomeScreen({ navigation }: Props) {
           <TouchableOpacity style={s.btnSecondary} onPress={() => navigation.navigate('Login')}>
             <Text style={s.btnSecondaryText}>Se connecter</Text>
           </TouchableOpacity>
+          <TouchableOpacity style={s.btnOffline} onPress={enterOfflineMode}>
+            <Text style={s.btnOfflineText}>Continuer sans internet</Text>
+          </TouchableOpacity>
         </View>
 
         <Text style={s.footer}>En continuant, vous acceptez nos conditions d'utilisation</Text>
@@ -50,5 +54,7 @@ const s = StyleSheet.create({
   btnPrimaryText: { color: colors.white, fontSize: 16, fontWeight: '700' },
   btnSecondary: { backgroundColor: colors.white, borderRadius: 14, paddingVertical: 16, alignItems: 'center', borderWidth: 2, borderColor: colors.primary },
   btnSecondaryText: { color: colors.primary, fontSize: 16, fontWeight: '700' },
+  btnOffline: { backgroundColor: colors.card, borderRadius: 14, paddingVertical: 14, alignItems: 'center', borderWidth: 1, borderColor: colors.border },
+  btnOfflineText: { color: colors.textSecondary, fontSize: 14, fontWeight: '600' },
   footer: { color: colors.inactive, fontSize: 11, textAlign: 'center' },
 });

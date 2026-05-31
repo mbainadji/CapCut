@@ -7,6 +7,13 @@ import {
 import { launchImageLibrary } from 'react-native-image-picker';
 import { supabase } from '../supabase';
 import { colors } from '../../context/ThemeContext';
+import { getOfflineUser, isOfflineMode } from '../authService';
+import {
+  createOfflineProject,
+  deleteOfflineProject,
+  getOfflineProjects,
+  updateOfflineProject,
+} from '../offlineProjectService';
 
 const { width } = Dimensions.get('window');
 
@@ -55,6 +62,12 @@ export default function DashboardProjectsScreen({ navigation }: any) {
   const chargerProjets = async () => {
     try {
       setLoading(true);
+      if (await isOfflineMode()) {
+        const data = await getOfflineProjects();
+        setProjets(data);
+        setProjetsFiltres(data);
+        return;
+      }
       const { data: { user } } = await supabase.auth.getUser();
       if (!user) return;
       const { data, error } = await supabase
@@ -85,6 +98,24 @@ export default function DashboardProjectsScreen({ navigation }: any) {
       const video = response.assets?.[0];
       if (!video) return;
       try {
+        if (await isOfflineMode()) {
+          const user = await getOfflineUser();
+          if (!user) return;
+          const nom = `Projet du ${new Date().toLocaleDateString('fr-FR')}`;
+          const data = await createOfflineProject({
+            user_id: user.id,
+            nom,
+            video_source_url: video.uri,
+          });
+          chargerProjets();
+          navigation.navigate('VideoEditor', {
+            projetId: data.id,
+            videoUri: video.uri,
+            nomProjet: nom,
+          });
+          return;
+        }
+
         const { data: { user } } = await supabase.auth.getUser();
         if (!user) return;
         const nom = `Projet du ${new Date().toLocaleDateString('fr-FR')}`;
@@ -126,10 +157,14 @@ export default function DashboardProjectsScreen({ navigation }: any) {
       const video = response.assets?.[0];
       if (!video) return;
       try {
-        await supabase.from('projets').update({
-          video_source_url: video.uri,
-          updated_at: new Date().toISOString(),
-        }).eq('id', projet.id);
+        if (await isOfflineMode()) {
+          await updateOfflineProject(projet.id, { video_source_url: video.uri });
+        } else {
+          await supabase.from('projets').update({
+            video_source_url: video.uri,
+            updated_at: new Date().toISOString(),
+          }).eq('id', projet.id);
+        }
         chargerProjets();
         navigation.navigate('VideoEditor', {
           projetId: projet.id,
@@ -214,10 +249,14 @@ export default function DashboardProjectsScreen({ navigation }: any) {
   const sauvegarderEffets = async () => {
     if (!projetActif) { setModalEffets(false); return; }
     try {
-      await supabase.from('projets').update({
-        timeline_data: { effets: effetsSelectionnes },
-        updated_at: new Date().toISOString(),
-      }).eq('id', projetActif);
+      if (await isOfflineMode()) {
+        await updateOfflineProject(projetActif, { timeline_data: { effets: effetsSelectionnes } });
+      } else {
+        await supabase.from('projets').update({
+          timeline_data: { effets: effetsSelectionnes },
+          updated_at: new Date().toISOString(),
+        }).eq('id', projetActif);
+      }
       setModalEffets(false);
       chargerProjets();
       Alert.alert('✅', `${effetsSelectionnes.length} effet(s) appliqué(s)`);
@@ -228,7 +267,11 @@ export default function DashboardProjectsScreen({ navigation }: any) {
     Alert.alert('Supprimer', 'Supprimer définitivement ce projet ?', [
       { text: 'Annuler', style: 'cancel' },
       { text: 'Supprimer', style: 'destructive', onPress: async () => {
-        await supabase.from('projets').delete().eq('id', id);
+        if (await isOfflineMode()) {
+          await deleteOfflineProject(id);
+        } else {
+          await supabase.from('projets').delete().eq('id', id);
+        }
         chargerProjets();
       }},
     ]);
@@ -445,10 +488,14 @@ export default function DashboardProjectsScreen({ navigation }: any) {
               </TouchableOpacity>
               <TouchableOpacity style={s.renommerBtnOk} onPress={async () => {
                 if (!nouveauNom.trim() || !projetARenommer) return;
-                await supabase.from('projets').update({
-                  nom: nouveauNom.trim(),
-                  updated_at: new Date().toISOString(),
-                }).eq('id', projetARenommer.id);
+                if (await isOfflineMode()) {
+                  await updateOfflineProject(projetARenommer.id, { nom: nouveauNom.trim() });
+                } else {
+                  await supabase.from('projets').update({
+                    nom: nouveauNom.trim(),
+                    updated_at: new Date().toISOString(),
+                  }).eq('id', projetARenommer.id);
+                }
                 setModalRenommer(false);
                 chargerProjets();
               }}>
