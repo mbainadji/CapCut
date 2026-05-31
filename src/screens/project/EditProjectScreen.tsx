@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import {
   View, Text, StyleSheet, TouchableOpacity,
   TextInput, Alert, ActivityIndicator, SafeAreaView, ScrollView,
@@ -22,11 +22,7 @@ export default function EditProjectScreen({ navigation, route }: Props) {
   const [miniatureUrl, setMiniatureUrl] = useState('');
   const [videoUrl, setVideoUrl] = useState('');
 
-  useEffect(() => {
-    chargerProjet();
-  }, []);
-
-  const chargerProjet = async () => {
+  const chargerProjet = useCallback(async () => {
     try {
       const { data, error } = await supabase
         .from('projets')
@@ -42,7 +38,11 @@ export default function EditProjectScreen({ navigation, route }: Props) {
     } finally {
       setLoading(false);
     }
-  };
+  }, [projectId]);
+
+  useEffect(() => {
+    chargerProjet();
+  }, [chargerProjet]);
 
   const sauvegarder = async () => {
     if (!nom.trim()) {
@@ -71,6 +71,7 @@ export default function EditProjectScreen({ navigation, route }: Props) {
   const choisirMiniature = async () => {
     const result = await launchImageLibrary({ mediaType: 'photo', quality: 0.8 });
     if (result.assets && result.assets[0]) {
+      try {
       const asset = result.assets[0];
       const { data: { user } } = await supabase.auth.getUser();
       if (!user) return;
@@ -80,7 +81,12 @@ export default function EditProjectScreen({ navigation, route }: Props) {
 
       const response = await fetch(asset.uri!);
       const blob = await response.blob();
-      const arrayBuffer = await blob.arrayBuffer();
+      const arrayBuffer = await new Promise<ArrayBuffer>((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result as ArrayBuffer);
+        reader.onerror = reject;
+        reader.readAsArrayBuffer(blob);
+      });
 
       const { error } = await supabase.storage
         .from('medias')
@@ -88,18 +94,20 @@ export default function EditProjectScreen({ navigation, route }: Props) {
           contentType: asset.type || 'image/jpeg',
           upsert: true,
         });
+      if (error) throw error;
 
-      if (!error) {
-        const { data: urlData } = supabase.storage
-          .from('medias')
-          .getPublicUrl(filePath);
+      const { data: urlData } = supabase.storage
+        .from('medias')
+        .getPublicUrl(filePath);
 
-        await supabase.from('projets').update({
-          miniature_url: urlData.publicUrl,
-        }).eq('id', projectId);
+      await supabase.from('projets').update({
+        miniature_url: urlData.publicUrl,
+      }).eq('id', projectId);
 
-        setMiniatureUrl(urlData.publicUrl);
-        Alert.alert('Succès', 'Miniature mise à jour');
+      setMiniatureUrl(urlData.publicUrl);
+      Alert.alert('Succès', 'Miniature mise à jour');
+      } catch (error: any) {
+        Alert.alert('Erreur', error.message);
       }
     }
   };
@@ -139,6 +147,11 @@ export default function EditProjectScreen({ navigation, route }: Props) {
         {miniatureUrl ? (
           <Text style={styles.urlTexte}>✅ Miniature : {miniatureUrl.slice(0, 40)}...</Text>
         ) : null}
+        {videoUrl ? (
+          <Text style={styles.urlTexte}>✅ Vidéo : {videoUrl.slice(0, 40)}...</Text>
+        ) : (
+          <Text style={styles.urlTexte}>Aucune vidéo attachée à ce projet.</Text>
+        )}
 
         <TouchableOpacity
           style={[styles.boutonSauvegarder, saving && styles.boutonDisabled]}

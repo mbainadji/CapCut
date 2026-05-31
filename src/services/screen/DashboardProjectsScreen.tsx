@@ -243,14 +243,14 @@ export default function DashboardProjectsScreen({ navigation }: any) {
 
       {/* Header */}
       <View style={s.header}>
-        <TouchableOpacity style={s.headerBtn} onPress={() => navigation.getParent()?.navigate('ProfileTab')}>
+        <TouchableOpacity style={s.headerBtn} onPress={() => navigation.navigate('ProfileTab')}>
           <Text style={s.headerIcon}>👤</Text>
         </TouchableOpacity>
         <View style={s.headerRight}>
-          <TouchableOpacity style={s.headerBtn} onPress={() => Alert.alert('🔔 Notifications', 'Aucune nouvelle notification.')}>
-            <Text style={s.headerIcon}>🔔</Text>
+          <TouchableOpacity style={s.headerBtn} onPress={() => navigation.getParent()?.navigate('GuidePro')}>
+            <Text style={s.headerIcon}>?</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={s.headerBtn} onPress={() => navigation.getParent()?.navigate('ProfileTab')}>
+          <TouchableOpacity style={s.headerBtn} onPress={() => navigation.navigate('ProfileTab')}>
             <Text style={s.headerIcon}>⚙️</Text>
           </TouchableOpacity>
         </View>
@@ -335,6 +335,7 @@ export default function DashboardProjectsScreen({ navigation }: any) {
                     onPress={() => ouvrirProjetDansEditeur(item)}
                     onLongPress={() => Alert.alert(item.nom, 'Que voulez-vous faire ?', [
                       { text: '▶️ Ouvrir l\'éditeur', onPress: () => ouvrirProjetDansEditeur(item) },
+                      { text: '⚙️ Paramètres', onPress: () => navigation.getParent()?.navigate('EditProject', { projectId: item.id }) },
                       { text: '✨ Effets', onPress: () => ouvrirEffets(item.id, effets) },
                       { text: '✏️ Renommer', onPress: () => {
                         setProjetARenommer(item);

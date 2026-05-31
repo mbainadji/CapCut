@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useCallback, useEffect, useState, useRef } from 'react';
 import {
   View, Text, StyleSheet, TouchableOpacity, SafeAreaView,
   Alert, ActivityIndicator, ScrollView, Dimensions, StatusBar,
@@ -9,6 +9,12 @@ import RNFS from 'react-native-fs';
 import { supabase } from '../../services/supabase';
 import { colors } from '../../context/ThemeContext';
 import { useTheme } from '../../context/ThemeContext';
+
+const RESEAUX_DUREE = [
+  { nom: 'TikTok 🎵', max: 15, couleur: '#010101' },
+  { nom: 'Reels 📸', max: 30, couleur: '#E1306C' },
+  { nom: 'Shorts ▶️', max: 60, couleur: '#FF0000' },
+];
 
 const FILTRES = [
   { id: 'normal', nom: 'Normal', overlay: 'transparent', opacity: 0 },
@@ -28,6 +34,8 @@ const EFFETS_SPECIAUX = [
   { id: 'fondu', nom: '🌊 Fondu', description: 'Entrée en fondu', type: 'animation' },
   { id: 'sous_titres', nom: '💬 Sous-titres', description: 'Texte superposé', type: 'texte' },
 ];
+
+const VHS_SCANLINES = Array.from({ length: 18 }, (_, index) => index);
 
 export default function VideoEditorScreen({ navigation, route }: any) {
   const { projetId, videoUri, nomProjet } = route.params;
@@ -65,14 +73,7 @@ export default function VideoEditorScreen({ navigation, route }: any) {
 
   const videoUriNormalise = normaliserUri(videoUri);
 
-  useEffect(() => {
-    chargerEffetsSauvegardes();
-    if (!sauvegardeAuto) return;
-    const interval = setInterval(sauvegarderAuto, 30000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const chargerEffetsSauvegardes = async () => {
+  const chargerEffetsSauvegardes = useCallback(async () => {
     try {
       const { data } = await supabase.from('projets').select('timeline_data').eq('id', projetId).single();
       if (data?.timeline_data) {
@@ -89,9 +90,9 @@ export default function VideoEditorScreen({ navigation, route }: any) {
         if (td.sousTitre) setSousTitre(td.sousTitre);
       }
     } catch {}
-  };
+  }, [projetId]);
 
-  const sauvegarderAuto = async () => {
+  const sauvegarderAuto = useCallback(async () => {
     try {
       await supabase.from('projets').update({
         timeline_data: {
@@ -104,7 +105,17 @@ export default function VideoEditorScreen({ navigation, route }: any) {
       }).eq('id', projetId);
       setDerniereSauvegarde(new Date());
     } catch {}
-  };
+  }, [effetsActifs, filtreActif.id, projetId, sousTitre, trimEnd, trimStart, vitesse, volume]);
+
+  useEffect(() => {
+    chargerEffetsSauvegardes();
+  }, [chargerEffetsSauvegardes]);
+
+  useEffect(() => {
+    if (!sauvegardeAuto) return;
+    const interval = setInterval(sauvegarderAuto, 30000);
+    return () => clearInterval(interval);
+  }, [sauvegardeAuto, sauvegarderAuto]);
 
   // Effets visuels
   const lancerGlitch = () => {
@@ -246,6 +257,18 @@ export default function VideoEditorScreen({ navigation, route }: any) {
     }
   };
 
+  const verifierSansSon = () => {
+    Alert.alert(
+      '👁 Test sans son',
+      'Regardez maintenant votre vidéo SANS son.\n\nVérifiez :\n• Les sous-titres sont lisibles\n• L\'action est compréhensible sans audio\n• Le texte n\'est pas masqué par le UI',
+      [
+        { text: 'Regarder', onPress: () => { setVolume(0); setPaused(false); } },
+        { text: 'Remettre le son', onPress: () => setVolume(1) },
+        { text: 'Exporter quand même', onPress: exporter },
+      ]
+    );
+  };
+
   const exporter = async () => {
     await sauvegarderAuto();
     setLoading(true);
@@ -299,10 +322,15 @@ export default function VideoEditorScreen({ navigation, route }: any) {
           <TouchableOpacity onPress={supprimerVideo}>
             <Text style={s.headerDelete}>🗑</Text>
           </TouchableOpacity>
+          <View style={{ flexDirection: 'row', gap: 8, alignItems: 'center' }}>
+          <TouchableOpacity onPress={verifierSansSon} style={s.btnVerifier}>
+            <Text style={s.btnVerifierText}>👁</Text>
+          </TouchableOpacity>
           <TouchableOpacity onPress={exporter} disabled={loading}>
             {loading ? <ActivityIndicator color={colors.primary} size="small" />
               : <Text style={s.headerExport}>Exporter</Text>}
           </TouchableOpacity>
+          </View>
         </View>
       </View>
 
@@ -347,7 +375,11 @@ export default function VideoEditorScreen({ navigation, route }: any) {
               {getVHSOverlay() && (
                 <View style={s.vhsOverlay}>
                   <Text style={s.vhsTexte}>◉ REC</Text>
-                  <View style={s.vhsScanlines} />
+                  <View style={s.vhsScanlines}>
+                    {VHS_SCANLINES.map(line => (
+                      <View key={line} style={s.vhsScanline} />
+                    ))}
+                  </View>
                 </View>
               )}
 
@@ -393,6 +425,23 @@ export default function VideoEditorScreen({ navigation, route }: any) {
           <Text style={s.filtreActifLabel}>🎨 {filtreActif.nom}</Text>
           <Text style={s.tempsTotal}>{formatTime(duration)}</Text>
         </View>
+
+        {/* Indicateur durée optimale */}
+        {duration > 0 && (
+          <View style={s.dureeOptimale}>
+            {RESEAUX_DUREE.map(r => {
+              const dureeSelectionnee = trimEnd - trimStart;
+              const ok = dureeSelectionnee <= r.max;
+              return (
+                <View key={r.nom} style={[s.dureeItem, ok && s.dureeItemOk]}>
+                  <Text style={[s.dureeItemTexte, ok && s.dureeItemTexteOk]}>
+                    {ok ? '✅' : '⚠️'} {r.nom} ({r.max}s max)
+                  </Text>
+                </View>
+              );
+            })}
+          </View>
+        )}
 
         {/* Barre de progression */}
         <View style={s.progressContainer}>
@@ -620,13 +669,16 @@ const s = StyleSheet.create({
   headerTitre: { color: colors.text, fontSize: 14, fontWeight: 'bold' },
   headerSauvegarde: { color: colors.textSecondary, fontSize: 9 },
   headerExport: { color: colors.primary, fontSize: 14, fontWeight: 'bold' },
+  btnVerifier: { width: 32, height: 32, borderRadius: 16, backgroundColor: colors.card, justifyContent: 'center', alignItems: 'center', borderWidth: 1, borderColor: colors.border },
+  btnVerifierText: { fontSize: 16 },
   headerDelete: { fontSize: 18, marginRight: 4 },
   playerContainer: { width: '100%', backgroundColor: '#000', justifyContent: 'center', alignItems: 'center', overflow: 'hidden' },
   video: { width: '100%' },
   filtreOverlay: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 },
   vhsOverlay: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 },
   vhsTexte: { position: 'absolute', top: 8, right: 12, color: 'red', fontSize: 12, fontWeight: 'bold' },
-  vhsScanlines: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, opacity: 0.1, backgroundColor: 'repeating-linear-gradient(transparent, transparent 2px, #000 2px, #000 4px)' as any },
+  vhsScanlines: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, justifyContent: 'space-evenly', opacity: 0.18 },
+  vhsScanline: { height: 1, backgroundColor: colors.black },
   sousTitreContainer: { position: 'absolute', bottom: 16, left: 16, right: 16, backgroundColor: '#000000AA', borderRadius: 6, padding: 8 },
   sousTitreTexte: { color: '#fff', fontSize: 14, textAlign: 'center' },
   videoLoading: { position: 'absolute', justifyContent: 'center', alignItems: 'center' },
@@ -682,6 +734,11 @@ const s = StyleSheet.create({
   sliderBtnTextActive: { color: colors.primary, fontWeight: 'bold' },
   panelBtn: { backgroundColor: colors.card, borderRadius: 10, padding: 14, alignItems: 'center', marginBottom: 8, borderWidth: 1, borderColor: colors.border },
   panelBtnText: { color: colors.text, fontSize: 14 },
+  dureeOptimale: { flexDirection: 'row', paddingHorizontal: 16, paddingVertical: 8, gap: 6, backgroundColor: colors.card, flexWrap: 'wrap' },
+  dureeItem: { backgroundColor: '#FFF0F0', borderRadius: 8, paddingHorizontal: 8, paddingVertical: 4, borderWidth: 1, borderColor: '#FFD0D0' },
+  dureeItemOk: { backgroundColor: '#F0FFF4', borderColor: '#C6F6D5' },
+  dureeItemTexte: { fontSize: 10, color: colors.danger },
+  dureeItemTexteOk: { color: colors.success },
   btnTelephone: { backgroundColor: colors.primary, margin: 16, borderRadius: 12, padding: 16, alignItems: 'center', elevation: 2 },
   btnTelephoneText: { color: colors.white, fontSize: 15, fontWeight: 'bold' },
   modalOverlay: { flex: 1, backgroundColor: '#00000066', justifyContent: 'flex-end' },

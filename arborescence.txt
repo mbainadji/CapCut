@@ -1,0 +1,1484 @@
+.
+├── android
+│   ├── app
+│   │   ├── build.gradle
+│   │   ├── .cxx
+│   │   │   ├── Debug
+│   │   │   │   └── 1k4p2o6z
+│   │   │   │       ├── arm64-v8a
+│   │   │   │       │   ├── additional_project_files.txt
+│   │   │   │       │   ├── android_gradle_build.json
+│   │   │   │       │   ├── android_gradle_build_mini.json
+│   │   │   │       │   ├── AsyncStorageSpec_autolinked_build
+│   │   │   │       │   │   ├── CMakeFiles
+│   │   │   │       │   │   │   └── react_codegen_AsyncStorageSpec.dir
+│   │   │   │       │   │   │       └── react
+│   │   │   │       │   │   │           └── renderer
+│   │   │   │       │   │   │               └── components
+│   │   │   │       │   │   │                   └── AsyncStorageSpec
+│   │   │   │       │   │   └── cmake_install.cmake
+│   │   │   │       │   ├── build_file_index.txt
+│   │   │   │       │   ├── build.ninja
+│   │   │   │       │   ├── .cmake
+│   │   │   │       │   │   └── api
+│   │   │   │       │   │       └── v1
+│   │   │   │       │   │           ├── query
+│   │   │   │       │   │           │   └── client-agp
+│   │   │   │       │   │           │       ├── cache-v2
+│   │   │   │       │   │           │       ├── cmakeFiles-v1
+│   │   │   │       │   │           │       └── codemodel-v2
+│   │   │   │       │   │           └── reply
+│   │   │   │       │   │               ├── cache-v2-2732fb8ee0e97847bbb8.json
+│   │   │   │       │   │               ├── cmakeFiles-v1-682533c051e653599be8.json
+│   │   │   │       │   │               ├── codemodel-v2-aec597f3c802efaa6f7d.json
+│   │   │   │       │   │               ├── directory-AsyncStorageSpec_autolinked_build-Debug-5db41afe5a002c8325d8.json
+│   │   │   │       │   │               ├── directory-.-Debug-f5ebdc15457944623624.json
+│   │   │   │       │   │               ├── directory-rnscreens_autolinked_build-Debug-13dd5165b766eedba376.json
+│   │   │   │       │   │               ├── directory-safeareacontext_autolinked_build-Debug-e7dadd0ee70437f72829.json
+│   │   │   │       │   │               ├── index-2026-05-29T07-13-47-0712.json
+│   │   │   │       │   │               ├── target-appmodules-Debug-a0a473620ef32ae701de.json
+│   │   │   │       │   │               ├── target-react_codegen_AsyncStorageSpec-Debug-0661c927a8c9f88d30ba.json
+│   │   │   │       │   │               ├── target-react_codegen_rnscreens-Debug-30a521aa5722ac5338c8.json
+│   │   │   │       │   │               └── target-react_codegen_safeareacontext-Debug-5c5987d803671f3a77b1.json
+│   │   │   │       │   ├── CMakeCache.txt
+│   │   │   │       │   ├── CMakeFiles
+│   │   │   │       │   │   ├── 3.22.1-g37088a8
+│   │   │   │       │   │   │   ├── CMakeCCompiler.cmake
+│   │   │   │       │   │   │   ├── CMakeCXXCompiler.cmake
+│   │   │   │       │   │   │   ├── CMakeDetermineCompilerABI_C.bin
+│   │   │   │       │   │   │   ├── CMakeDetermineCompilerABI_CXX.bin
+│   │   │   │       │   │   │   ├── CMakeSystem.cmake
+│   │   │   │       │   │   │   ├── CompilerIdC
+│   │   │   │       │   │   │   │   ├── CMakeCCompilerId.c
+│   │   │   │       │   │   │   │   ├── CMakeCCompilerId.o
+│   │   │   │       │   │   │   │   └── tmp
+│   │   │   │       │   │   │   └── CompilerIdCXX
+│   │   │   │       │   │   │       ├── CMakeCXXCompilerId.cpp
+│   │   │   │       │   │   │       ├── CMakeCXXCompilerId.o
+│   │   │   │       │   │   │       └── tmp
+│   │   │   │       │   │   ├── appmodules.dir
+│   │   │   │       │   │   │   └── home
+│   │   │   │       │   │   │       └── kamala
+│   │   │   │       │   │   │           └── Documents
+│   │   │   │       │   │   │               └── ICT4D
+│   │   │   │       │   │   │                   └── ICT4DL2
+│   │   │   │       │   │   │                       └── ICT4D202
+│   │   │   │       │   │   │                           └── TPS
+│   │   │   │       │   │   │                               └── CapCut
+│   │   │   │       │   │   │                                   └── android
+│   │   │   │       │   │   │                                       └── app
+│   │   │   │       │   │   ├── cmake.check_cache
+│   │   │   │       │   │   ├── CMakeError.log
+│   │   │   │       │   │   ├── _CMakeLTOTest-CXX
+│   │   │   │       │   │   │   ├── bin
+│   │   │   │       │   │   │   │   ├── build.ninja
+│   │   │   │       │   │   │   │   ├── CMakeCache.txt
+│   │   │   │       │   │   │   │   ├── CMakeFiles
+│   │   │   │       │   │   │   │   │   ├── boo.dir
+│   │   │   │       │   │   │   │   │   │   └── main.cpp.o
+│   │   │   │       │   │   │   │   │   ├── cmake.check_cache
+│   │   │   │       │   │   │   │   │   ├── foo.dir
+│   │   │   │       │   │   │   │   │   │   └── foo.cpp.o
+│   │   │   │       │   │   │   │   │   ├── rules.ninja
+│   │   │   │       │   │   │   │   │   └── TargetDirectories.txt
+│   │   │   │       │   │   │   │   ├── cmake_install.cmake
+│   │   │   │       │   │   │   │   ├── libfoo.a
+│   │   │   │       │   │   │   │   ├── .ninja_deps
+│   │   │   │       │   │   │   │   └── .ninja_log
+│   │   │   │       │   │   │   └── src
+│   │   │   │       │   │   │       ├── CMakeLists.txt
+│   │   │   │       │   │   │       ├── foo.cpp
+│   │   │   │       │   │   │       └── main.cpp
+│   │   │   │       │   │   ├── CMakeOutput.log
+│   │   │   │       │   │   ├── CMakeTmp
+│   │   │   │       │   │   ├── cmake.verify_globs
+│   │   │   │       │   │   ├── rules.ninja
+│   │   │   │       │   │   ├── TargetDirectories.txt
+│   │   │   │       │   │   └── VerifyGlobs.cmake
+│   │   │   │       │   ├── cmake_install.cmake
+│   │   │   │       │   ├── compile_commands.json
+│   │   │   │       │   ├── compile_commands.json.bin
+│   │   │   │       │   ├── configure_fingerprint.bin
+│   │   │   │       │   ├── metadata_generation_command.txt
+│   │   │   │       │   ├── .ninja_deps
+│   │   │   │       │   ├── .ninja_log
+│   │   │   │       │   ├── prefab_config.json
+│   │   │   │       │   ├── rnscreens_autolinked_build
+│   │   │   │       │   │   ├── CMakeFiles
+│   │   │   │       │   │   │   └── react_codegen_rnscreens.dir
+│   │   │   │       │   │   │       └── home
+│   │   │   │       │   │   │           └── kamala
+│   │   │   │       │   │   │               └── Documents
+│   │   │   │       │   │   │                   └── ICT4D
+│   │   │   │       │   │   │                       └── ICT4DL2
+│   │   │   │       │   │   │                           └── ICT4D202
+│   │   │   │       │   │   │                               └── TPS
+│   │   │   │       │   │   │                                   └── CapCut
+│   │   │   │       │   │   └── cmake_install.cmake
+│   │   │   │       │   ├── safeareacontext_autolinked_build
+│   │   │   │       │   │   ├── CMakeFiles
+│   │   │   │       │   │   │   └── react_codegen_safeareacontext.dir
+│   │   │   │       │   │   │       └── home
+│   │   │   │       │   │   │           └── kamala
+│   │   │   │       │   │   │               └── Documents
+│   │   │   │       │   │   │                   └── ICT4D
+│   │   │   │       │   │   │                       └── ICT4DL2
+│   │   │   │       │   │   │                           └── ICT4D202
+│   │   │   │       │   │   │                               └── TPS
+│   │   │   │       │   │   │                                   └── CapCut
+│   │   │   │       │   │   └── cmake_install.cmake
+│   │   │   │       │   └── symbol_folder_index.txt
+│   │   │   │       ├── armeabi-v7a
+│   │   │   │       │   ├── additional_project_files.txt
+│   │   │   │       │   ├── android_gradle_build.json
+│   │   │   │       │   ├── android_gradle_build_mini.json
+│   │   │   │       │   ├── AsyncStorageSpec_autolinked_build
+│   │   │   │       │   │   ├── CMakeFiles
+│   │   │   │       │   │   │   └── react_codegen_AsyncStorageSpec.dir
+│   │   │   │       │   │   │       └── react
+│   │   │   │       │   │   │           └── renderer
+│   │   │   │       │   │   │               └── components
+│   │   │   │       │   │   │                   └── AsyncStorageSpec
+│   │   │   │       │   │   └── cmake_install.cmake
+│   │   │   │       │   ├── build_file_index.txt
+│   │   │   │       │   ├── build.ninja
+│   │   │   │       │   ├── .cmake
+│   │   │   │       │   │   └── api
+│   │   │   │       │   │       └── v1
+│   │   │   │       │   │           ├── query
+│   │   │   │       │   │           │   └── client-agp
+│   │   │   │       │   │           │       ├── cache-v2
+│   │   │   │       │   │           │       ├── cmakeFiles-v1
+│   │   │   │       │   │           │       └── codemodel-v2
+│   │   │   │       │   │           └── reply
+│   │   │   │       │   │               ├── cache-v2-4fff70a93562f75dd60a.json
+│   │   │   │       │   │               ├── cmakeFiles-v1-7d972472ce82fc4353bb.json
+│   │   │   │       │   │               ├── codemodel-v2-68a478d08283353237ee.json
+│   │   │   │       │   │               ├── directory-AsyncStorageSpec_autolinked_build-Debug-5db41afe5a002c8325d8.json
+│   │   │   │       │   │               ├── directory-.-Debug-f5ebdc15457944623624.json
+│   │   │   │       │   │               ├── directory-rnscreens_autolinked_build-Debug-13dd5165b766eedba376.json
+│   │   │   │       │   │               ├── directory-safeareacontext_autolinked_build-Debug-e7dadd0ee70437f72829.json
+│   │   │   │       │   │               ├── index-2026-05-29T07-19-52-0722.json
+│   │   │   │       │   │               ├── target-appmodules-Debug-deb33e6e03224c2f5a49.json
+│   │   │   │       │   │               ├── target-react_codegen_AsyncStorageSpec-Debug-33b06552a098602511ce.json
+│   │   │   │       │   │               ├── target-react_codegen_rnscreens-Debug-b8f8693c00d4f6ed14cc.json
+│   │   │   │       │   │               └── target-react_codegen_safeareacontext-Debug-8bab08ddea101c76012b.json
+│   │   │   │       │   ├── CMakeCache.txt
+│   │   │   │       │   ├── CMakeFiles
+│   │   │   │       │   │   ├── 3.22.1-g37088a8
+│   │   │   │       │   │   │   ├── CMakeCCompiler.cmake
+│   │   │   │       │   │   │   ├── CMakeCXXCompiler.cmake
+│   │   │   │       │   │   │   ├── CMakeDetermineCompilerABI_C.bin
+│   │   │   │       │   │   │   ├── CMakeDetermineCompilerABI_CXX.bin
+│   │   │   │       │   │   │   ├── CMakeSystem.cmake
+│   │   │   │       │   │   │   ├── CompilerIdC
+│   │   │   │       │   │   │   │   ├── CMakeCCompilerId.c
+│   │   │   │       │   │   │   │   ├── CMakeCCompilerId.o
+│   │   │   │       │   │   │   │   └── tmp
+│   │   │   │       │   │   │   └── CompilerIdCXX
+│   │   │   │       │   │   │       ├── CMakeCXXCompilerId.cpp
+│   │   │   │       │   │   │       ├── CMakeCXXCompilerId.o
+│   │   │   │       │   │   │       └── tmp
+│   │   │   │       │   │   ├── appmodules.dir
+│   │   │   │       │   │   │   └── home
+│   │   │   │       │   │   │       └── kamala
+│   │   │   │       │   │   │           └── Documents
+│   │   │   │       │   │   │               └── ICT4D
+│   │   │   │       │   │   │                   └── ICT4DL2
+│   │   │   │       │   │   │                       └── ICT4D202
+│   │   │   │       │   │   │                           └── TPS
+│   │   │   │       │   │   │                               └── CapCut
+│   │   │   │       │   │   │                                   └── android
+│   │   │   │       │   │   │                                       └── app
+│   │   │   │       │   │   ├── cmake.check_cache
+│   │   │   │       │   │   ├── CMakeError.log
+│   │   │   │       │   │   ├── _CMakeLTOTest-CXX
+│   │   │   │       │   │   │   ├── bin
+│   │   │   │       │   │   │   │   ├── build.ninja
+│   │   │   │       │   │   │   │   ├── CMakeCache.txt
+│   │   │   │       │   │   │   │   ├── CMakeFiles
+│   │   │   │       │   │   │   │   │   ├── boo.dir
+│   │   │   │       │   │   │   │   │   │   └── main.cpp.o
+│   │   │   │       │   │   │   │   │   ├── cmake.check_cache
+│   │   │   │       │   │   │   │   │   ├── foo.dir
+│   │   │   │       │   │   │   │   │   │   └── foo.cpp.o
+│   │   │   │       │   │   │   │   │   ├── rules.ninja
+│   │   │   │       │   │   │   │   │   └── TargetDirectories.txt
+│   │   │   │       │   │   │   │   ├── cmake_install.cmake
+│   │   │   │       │   │   │   │   ├── libfoo.a
+│   │   │   │       │   │   │   │   ├── .ninja_deps
+│   │   │   │       │   │   │   │   └── .ninja_log
+│   │   │   │       │   │   │   └── src
+│   │   │   │       │   │   │       ├── CMakeLists.txt
+│   │   │   │       │   │   │       ├── foo.cpp
+│   │   │   │       │   │   │       └── main.cpp
+│   │   │   │       │   │   ├── CMakeOutput.log
+│   │   │   │       │   │   ├── CMakeTmp
+│   │   │   │       │   │   ├── cmake.verify_globs
+│   │   │   │       │   │   ├── rules.ninja
+│   │   │   │       │   │   ├── TargetDirectories.txt
+│   │   │   │       │   │   └── VerifyGlobs.cmake
+│   │   │   │       │   ├── cmake_install.cmake
+│   │   │   │       │   ├── compile_commands.json
+│   │   │   │       │   ├── compile_commands.json.bin
+│   │   │   │       │   ├── configure_fingerprint.bin
+│   │   │   │       │   ├── metadata_generation_command.txt
+│   │   │   │       │   ├── .ninja_deps
+│   │   │   │       │   ├── .ninja_log
+│   │   │   │       │   ├── prefab_config.json
+│   │   │   │       │   ├── rnscreens_autolinked_build
+│   │   │   │       │   │   ├── CMakeFiles
+│   │   │   │       │   │   │   └── react_codegen_rnscreens.dir
+│   │   │   │       │   │   │       ├── home
+│   │   │   │       │   │   │       │   └── kamala
+│   │   │   │       │   │   │       │       └── Documents
+│   │   │   │       │   │   │       │           └── ICT4D
+│   │   │   │       │   │   │       │               └── ICT4DL2
+│   │   │   │       │   │   │       │                   └── ICT4D202
+│   │   │   │       │   │   │       │                       └── TPS
+│   │   │   │       │   │   │       │                           └── CapCut
+│   │   │   │       │   │   │       └── rnscreens.cpp-0d569415.o.tmp
+│   │   │   │       │   │   └── cmake_install.cmake
+│   │   │   │       │   ├── safeareacontext_autolinked_build
+│   │   │   │       │   │   ├── CMakeFiles
+│   │   │   │       │   │   │   └── react_codegen_safeareacontext.dir
+│   │   │   │       │   │   │       └── home
+│   │   │   │       │   │   │           └── kamala
+│   │   │   │       │   │   │               └── Documents
+│   │   │   │       │   │   │                   └── ICT4D
+│   │   │   │       │   │   │                       └── ICT4DL2
+│   │   │   │       │   │   │                           └── ICT4D202
+│   │   │   │       │   │   │                               └── TPS
+│   │   │   │       │   │   │                                   └── CapCut
+│   │   │   │       │   │   └── cmake_install.cmake
+│   │   │   │       │   └── symbol_folder_index.txt
+│   │   │   │       ├── hash_key.txt
+│   │   │   │       ├── prefab
+│   │   │   │       │   ├── arm64-v8a
+│   │   │   │       │   │   └── prefab
+│   │   │   │       │   │       └── lib
+│   │   │   │       │   │           └── aarch64-linux-android
+│   │   │   │       │   │               └── cmake
+│   │   │   │       │   │                   ├── fbjni
+│   │   │   │       │   │                   │   ├── fbjniConfig.cmake
+│   │   │   │       │   │                   │   └── fbjniConfigVersion.cmake
+│   │   │   │       │   │                   ├── hermes-engine
+│   │   │   │       │   │                   │   ├── hermes-engineConfig.cmake
+│   │   │   │       │   │                   │   └── hermes-engineConfigVersion.cmake
+│   │   │   │       │   │                   └── ReactAndroid
+│   │   │   │       │   │                       ├── ReactAndroidConfig.cmake
+│   │   │   │       │   │                       └── ReactAndroidConfigVersion.cmake
+│   │   │   │       │   ├── armeabi-v7a
+│   │   │   │       │   │   └── prefab
+│   │   │   │       │   │       └── lib
+│   │   │   │       │   │           └── arm-linux-androideabi
+│   │   │   │       │   │               └── cmake
+│   │   │   │       │   │                   ├── fbjni
+│   │   │   │       │   │                   │   ├── fbjniConfig.cmake
+│   │   │   │       │   │                   │   └── fbjniConfigVersion.cmake
+│   │   │   │       │   │                   ├── hermes-engine
+│   │   │   │       │   │                   │   ├── hermes-engineConfig.cmake
+│   │   │   │       │   │                   │   └── hermes-engineConfigVersion.cmake
+│   │   │   │       │   │                   └── ReactAndroid
+│   │   │   │       │   │                       ├── ReactAndroidConfig.cmake
+│   │   │   │       │   │                       └── ReactAndroidConfigVersion.cmake
+│   │   │   │       │   ├── x86
+│   │   │   │       │   │   └── prefab
+│   │   │   │       │   │       └── lib
+│   │   │   │       │   │           └── i686-linux-android
+│   │   │   │       │   │               └── cmake
+│   │   │   │       │   │                   ├── fbjni
+│   │   │   │       │   │                   │   ├── fbjniConfig.cmake
+│   │   │   │       │   │                   │   └── fbjniConfigVersion.cmake
+│   │   │   │       │   │                   ├── hermes-engine
+│   │   │   │       │   │                   │   ├── hermes-engineConfig.cmake
+│   │   │   │       │   │                   │   └── hermes-engineConfigVersion.cmake
+│   │   │   │       │   │                   └── ReactAndroid
+│   │   │   │       │   │                       ├── ReactAndroidConfig.cmake
+│   │   │   │       │   │                       └── ReactAndroidConfigVersion.cmake
+│   │   │   │       │   └── x86_64
+│   │   │   │       │       └── prefab
+│   │   │   │       │           └── lib
+│   │   │   │       │               └── x86_64-linux-android
+│   │   │   │       │                   └── cmake
+│   │   │   │       │                       ├── fbjni
+│   │   │   │       │                       │   ├── fbjniConfig.cmake
+│   │   │   │       │                       │   └── fbjniConfigVersion.cmake
+│   │   │   │       │                       ├── hermes-engine
+│   │   │   │       │                       │   ├── hermes-engineConfig.cmake
+│   │   │   │       │                       │   └── hermes-engineConfigVersion.cmake
+│   │   │   │       │                       └── ReactAndroid
+│   │   │   │       │                           ├── ReactAndroidConfig.cmake
+│   │   │   │       │                           └── ReactAndroidConfigVersion.cmake
+│   │   │   │       ├── x86
+│   │   │   │       │   ├── additional_project_files.txt
+│   │   │   │       │   ├── android_gradle_build.json
+│   │   │   │       │   ├── android_gradle_build_mini.json
+│   │   │   │       │   ├── AsyncStorageSpec_autolinked_build
+│   │   │   │       │   │   ├── CMakeFiles
+│   │   │   │       │   │   │   └── react_codegen_AsyncStorageSpec.dir
+│   │   │   │       │   │   │       └── react
+│   │   │   │       │   │   │           └── renderer
+│   │   │   │       │   │   │               └── components
+│   │   │   │       │   │   │                   └── AsyncStorageSpec
+│   │   │   │       │   │   └── cmake_install.cmake
+│   │   │   │       │   ├── build_file_index.txt
+│   │   │   │       │   ├── build.ninja
+│   │   │   │       │   ├── .cmake
+│   │   │   │       │   │   └── api
+│   │   │   │       │   │       └── v1
+│   │   │   │       │   │           ├── query
+│   │   │   │       │   │           │   └── client-agp
+│   │   │   │       │   │           │       ├── cache-v2
+│   │   │   │       │   │           │       ├── cmakeFiles-v1
+│   │   │   │       │   │           │       └── codemodel-v2
+│   │   │   │       │   │           └── reply
+│   │   │   │       │   │               ├── cache-v2-bb49d2a0a03f0cf7db18.json
+│   │   │   │       │   │               ├── cmakeFiles-v1-e06b1bb81b6d1422ebc5.json
+│   │   │   │       │   │               ├── codemodel-v2-f0314455a1ce41fd1789.json
+│   │   │   │       │   │               ├── directory-AsyncStorageSpec_autolinked_build-Debug-5db41afe5a002c8325d8.json
+│   │   │   │       │   │               ├── directory-.-Debug-f5ebdc15457944623624.json
+│   │   │   │       │   │               ├── directory-rnscreens_autolinked_build-Debug-13dd5165b766eedba376.json
+│   │   │   │       │   │               ├── directory-safeareacontext_autolinked_build-Debug-e7dadd0ee70437f72829.json
+│   │   │   │       │   │               ├── index-2026-05-29T07-19-53-0194.json
+│   │   │   │       │   │               ├── target-appmodules-Debug-31c233be201a95d79788.json
+│   │   │   │       │   │               ├── target-react_codegen_AsyncStorageSpec-Debug-0661c927a8c9f88d30ba.json
+│   │   │   │       │   │               ├── target-react_codegen_rnscreens-Debug-81869647648afed52762.json
+│   │   │   │       │   │               └── target-react_codegen_safeareacontext-Debug-b191f0f4b1aca69acd21.json
+│   │   │   │       │   ├── CMakeCache.txt
+│   │   │   │       │   ├── CMakeFiles
+│   │   │   │       │   │   ├── 3.22.1-g37088a8
+│   │   │   │       │   │   │   ├── CMakeCCompiler.cmake
+│   │   │   │       │   │   │   ├── CMakeCXXCompiler.cmake
+│   │   │   │       │   │   │   ├── CMakeDetermineCompilerABI_C.bin
+│   │   │   │       │   │   │   ├── CMakeDetermineCompilerABI_CXX.bin
+│   │   │   │       │   │   │   ├── CMakeSystem.cmake
+│   │   │   │       │   │   │   ├── CompilerIdC
+│   │   │   │       │   │   │   │   ├── CMakeCCompilerId.c
+│   │   │   │       │   │   │   │   ├── CMakeCCompilerId.o
+│   │   │   │       │   │   │   │   └── tmp
+│   │   │   │       │   │   │   └── CompilerIdCXX
+│   │   │   │       │   │   │       ├── CMakeCXXCompilerId.cpp
+│   │   │   │       │   │   │       ├── CMakeCXXCompilerId.o
+│   │   │   │       │   │   │       └── tmp
+│   │   │   │       │   │   ├── appmodules.dir
+│   │   │   │       │   │   │   └── home
+│   │   │   │       │   │   │       └── kamala
+│   │   │   │       │   │   │           └── Documents
+│   │   │   │       │   │   │               └── ICT4D
+│   │   │   │       │   │   │                   └── ICT4DL2
+│   │   │   │       │   │   │                       └── ICT4D202
+│   │   │   │       │   │   │                           └── TPS
+│   │   │   │       │   │   │                               └── CapCut
+│   │   │   │       │   │   │                                   └── android
+│   │   │   │       │   │   │                                       └── app
+│   │   │   │       │   │   ├── cmake.check_cache
+│   │   │   │       │   │   ├── CMakeError.log
+│   │   │   │       │   │   ├── _CMakeLTOTest-CXX
+│   │   │   │       │   │   │   ├── bin
+│   │   │   │       │   │   │   │   ├── build.ninja
+│   │   │   │       │   │   │   │   ├── CMakeCache.txt
+│   │   │   │       │   │   │   │   ├── CMakeFiles
+│   │   │   │       │   │   │   │   │   ├── boo.dir
+│   │   │   │       │   │   │   │   │   │   └── main.cpp.o
+│   │   │   │       │   │   │   │   │   ├── cmake.check_cache
+│   │   │   │       │   │   │   │   │   ├── foo.dir
+│   │   │   │       │   │   │   │   │   │   └── foo.cpp.o
+│   │   │   │       │   │   │   │   │   ├── rules.ninja
+│   │   │   │       │   │   │   │   │   └── TargetDirectories.txt
+│   │   │   │       │   │   │   │   ├── cmake_install.cmake
+│   │   │   │       │   │   │   │   ├── libfoo.a
+│   │   │   │       │   │   │   │   ├── .ninja_deps
+│   │   │   │       │   │   │   │   └── .ninja_log
+│   │   │   │       │   │   │   └── src
+│   │   │   │       │   │   │       ├── CMakeLists.txt
+│   │   │   │       │   │   │       ├── foo.cpp
+│   │   │   │       │   │   │       └── main.cpp
+│   │   │   │       │   │   ├── CMakeOutput.log
+│   │   │   │       │   │   ├── CMakeTmp
+│   │   │   │       │   │   ├── cmake.verify_globs
+│   │   │   │       │   │   ├── rules.ninja
+│   │   │   │       │   │   ├── TargetDirectories.txt
+│   │   │   │       │   │   └── VerifyGlobs.cmake
+│   │   │   │       │   ├── cmake_install.cmake
+│   │   │   │       │   ├── compile_commands.json
+│   │   │   │       │   ├── compile_commands.json.bin
+│   │   │   │       │   ├── configure_fingerprint.bin
+│   │   │   │       │   ├── metadata_generation_command.txt
+│   │   │   │       │   ├── .ninja_deps
+│   │   │   │       │   ├── .ninja_log
+│   │   │   │       │   ├── prefab_config.json
+│   │   │   │       │   ├── rnscreens_autolinked_build
+│   │   │   │       │   │   ├── CMakeFiles
+│   │   │   │       │   │   │   └── react_codegen_rnscreens.dir
+│   │   │   │       │   │   │       └── home
+│   │   │   │       │   │   │           └── kamala
+│   │   │   │       │   │   │               └── Documents
+│   │   │   │       │   │   │                   └── ICT4D
+│   │   │   │       │   │   │                       └── ICT4DL2
+│   │   │   │       │   │   │                           └── ICT4D202
+│   │   │   │       │   │   │                               └── TPS
+│   │   │   │       │   │   │                                   └── CapCut
+│   │   │   │       │   │   └── cmake_install.cmake
+│   │   │   │       │   ├── safeareacontext_autolinked_build
+│   │   │   │       │   │   ├── CMakeFiles
+│   │   │   │       │   │   │   └── react_codegen_safeareacontext.dir
+│   │   │   │       │   │   │       └── home
+│   │   │   │       │   │   │           └── kamala
+│   │   │   │       │   │   │               └── Documents
+│   │   │   │       │   │   │                   └── ICT4D
+│   │   │   │       │   │   │                       └── ICT4DL2
+│   │   │   │       │   │   │                           └── ICT4D202
+│   │   │   │       │   │   │                               └── TPS
+│   │   │   │       │   │   │                                   └── CapCut
+│   │   │   │       │   │   └── cmake_install.cmake
+│   │   │   │       │   └── symbol_folder_index.txt
+│   │   │   │       └── x86_64
+│   │   │   │           ├── additional_project_files.txt
+│   │   │   │           ├── android_gradle_build.json
+│   │   │   │           ├── android_gradle_build_mini.json
+│   │   │   │           ├── AsyncStorageSpec_autolinked_build
+│   │   │   │           │   ├── CMakeFiles
+│   │   │   │           │   │   └── react_codegen_AsyncStorageSpec.dir
+│   │   │   │           │   │       └── react
+│   │   │   │           │   │           └── renderer
+│   │   │   │           │   │               └── components
+│   │   │   │           │   │                   └── AsyncStorageSpec
+│   │   │   │           │   └── cmake_install.cmake
+│   │   │   │           ├── build_file_index.txt
+│   │   │   │           ├── build.ninja
+│   │   │   │           ├── .cmake
+│   │   │   │           │   └── api
+│   │   │   │           │       └── v1
+│   │   │   │           │           ├── query
+│   │   │   │           │           │   └── client-agp
+│   │   │   │           │           │       ├── cache-v2
+│   │   │   │           │           │       ├── cmakeFiles-v1
+│   │   │   │           │           │       └── codemodel-v2
+│   │   │   │           │           └── reply
+│   │   │   │           │               ├── cache-v2-f2ed36bd82d1d063c37a.json
+│   │   │   │           │               ├── cmakeFiles-v1-41b11af1c527f03298cc.json
+│   │   │   │           │               ├── codemodel-v2-5d0ec043c4c29b19ba68.json
+│   │   │   │           │               ├── directory-AsyncStorageSpec_autolinked_build-Debug-5db41afe5a002c8325d8.json
+│   │   │   │           │               ├── directory-.-Debug-f5ebdc15457944623624.json
+│   │   │   │           │               ├── directory-rnscreens_autolinked_build-Debug-13dd5165b766eedba376.json
+│   │   │   │           │               ├── directory-safeareacontext_autolinked_build-Debug-e7dadd0ee70437f72829.json
+│   │   │   │           │               ├── index-2026-05-29T07-19-53-0619.json
+│   │   │   │           │               ├── target-appmodules-Debug-2221a75f22e05d499623.json
+│   │   │   │           │               ├── target-react_codegen_AsyncStorageSpec-Debug-0661c927a8c9f88d30ba.json
+│   │   │   │           │               ├── target-react_codegen_rnscreens-Debug-fd726748ca606c0a89e1.json
+│   │   │   │           │               └── target-react_codegen_safeareacontext-Debug-3eecea902ba93609331e.json
+│   │   │   │           ├── CMakeCache.txt
+│   │   │   │           ├── CMakeFiles
+│   │   │   │           │   ├── 3.22.1-g37088a8
+│   │   │   │           │   │   ├── CMakeCCompiler.cmake
+│   │   │   │           │   │   ├── CMakeCXXCompiler.cmake
+│   │   │   │           │   │   ├── CMakeDetermineCompilerABI_C.bin
+│   │   │   │           │   │   ├── CMakeDetermineCompilerABI_CXX.bin
+│   │   │   │           │   │   ├── CMakeSystem.cmake
+│   │   │   │           │   │   ├── CompilerIdC
+│   │   │   │           │   │   │   ├── CMakeCCompilerId.c
+│   │   │   │           │   │   │   ├── CMakeCCompilerId.o
+│   │   │   │           │   │   │   └── tmp
+│   │   │   │           │   │   └── CompilerIdCXX
+│   │   │   │           │   │       ├── CMakeCXXCompilerId.cpp
+│   │   │   │           │   │       ├── CMakeCXXCompilerId.o
+│   │   │   │           │   │       └── tmp
+│   │   │   │           │   ├── appmodules.dir
+│   │   │   │           │   │   └── home
+│   │   │   │           │   │       └── kamala
+│   │   │   │           │   │           └── Documents
+│   │   │   │           │   │               └── ICT4D
+│   │   │   │           │   │                   └── ICT4DL2
+│   │   │   │           │   │                       └── ICT4D202
+│   │   │   │           │   │                           └── TPS
+│   │   │   │           │   │                               └── CapCut
+│   │   │   │           │   │                                   └── android
+│   │   │   │           │   │                                       └── app
+│   │   │   │           │   ├── cmake.check_cache
+│   │   │   │           │   ├── CMakeError.log
+│   │   │   │           │   ├── _CMakeLTOTest-CXX
+│   │   │   │           │   │   ├── bin
+│   │   │   │           │   │   │   ├── build.ninja
+│   │   │   │           │   │   │   ├── CMakeCache.txt
+│   │   │   │           │   │   │   ├── CMakeFiles
+│   │   │   │           │   │   │   │   ├── boo.dir
+│   │   │   │           │   │   │   │   │   └── main.cpp.o
+│   │   │   │           │   │   │   │   ├── cmake.check_cache
+│   │   │   │           │   │   │   │   ├── foo.dir
+│   │   │   │           │   │   │   │   │   └── foo.cpp.o
+│   │   │   │           │   │   │   │   ├── rules.ninja
+│   │   │   │           │   │   │   │   └── TargetDirectories.txt
+│   │   │   │           │   │   │   ├── cmake_install.cmake
+│   │   │   │           │   │   │   ├── libfoo.a
+│   │   │   │           │   │   │   ├── .ninja_deps
+│   │   │   │           │   │   │   └── .ninja_log
+│   │   │   │           │   │   └── src
+│   │   │   │           │   │       ├── CMakeLists.txt
+│   │   │   │           │   │       ├── foo.cpp
+│   │   │   │           │   │       └── main.cpp
+│   │   │   │           │   ├── CMakeOutput.log
+│   │   │   │           │   ├── CMakeTmp
+│   │   │   │           │   ├── cmake.verify_globs
+│   │   │   │           │   ├── rules.ninja
+│   │   │   │           │   ├── TargetDirectories.txt
+│   │   │   │           │   └── VerifyGlobs.cmake
+│   │   │   │           ├── cmake_install.cmake
+│   │   │   │           ├── compile_commands.json
+│   │   │   │           ├── compile_commands.json.bin
+│   │   │   │           ├── configure_fingerprint.bin
+│   │   │   │           ├── metadata_generation_command.txt
+│   │   │   │           ├── .ninja_deps
+│   │   │   │           ├── .ninja_log
+│   │   │   │           ├── prefab_config.json
+│   │   │   │           ├── rnscreens_autolinked_build
+│   │   │   │           │   ├── CMakeFiles
+│   │   │   │           │   │   └── react_codegen_rnscreens.dir
+│   │   │   │           │   │       └── home
+│   │   │   │           │   │           └── kamala
+│   │   │   │           │   │               └── Documents
+│   │   │   │           │   │                   └── ICT4D
+│   │   │   │           │   │                       └── ICT4DL2
+│   │   │   │           │   │                           └── ICT4D202
+│   │   │   │           │   │                               └── TPS
+│   │   │   │           │   │                                   └── CapCut
+│   │   │   │           │   └── cmake_install.cmake
+│   │   │   │           ├── safeareacontext_autolinked_build
+│   │   │   │           │   ├── CMakeFiles
+│   │   │   │           │   │   └── react_codegen_safeareacontext.dir
+│   │   │   │           │   │       └── home
+│   │   │   │           │   │           └── kamala
+│   │   │   │           │   │               └── Documents
+│   │   │   │           │   │                   └── ICT4D
+│   │   │   │           │   │                       └── ICT4DL2
+│   │   │   │           │   │                           └── ICT4D202
+│   │   │   │           │   │                               └── TPS
+│   │   │   │           │   │                                   └── CapCut
+│   │   │   │           │   └── cmake_install.cmake
+│   │   │   │           └── symbol_folder_index.txt
+│   │   │   ├── RelWithDebInfo
+│   │   │   │   └── 2354l5t3
+│   │   │   │       ├── arm64-v8a
+│   │   │   │       │   ├── additional_project_files.txt
+│   │   │   │       │   ├── android_gradle_build.json
+│   │   │   │       │   ├── android_gradle_build_mini.json
+│   │   │   │       │   ├── AsyncStorageSpec_autolinked_build
+│   │   │   │       │   │   ├── CMakeFiles
+│   │   │   │       │   │   │   └── react_codegen_AsyncStorageSpec.dir
+│   │   │   │       │   │   │       ├── AsyncStorageSpec-generated.cpp.o
+│   │   │   │       │   │   │       └── react
+│   │   │   │       │   │   │           └── renderer
+│   │   │   │       │   │   │               └── components
+│   │   │   │       │   │   │                   └── AsyncStorageSpec
+│   │   │   │       │   │   │                       ├── ComponentDescriptors.cpp.o
+│   │   │   │       │   │   │                       ├── EventEmitters.cpp.o
+│   │   │   │       │   │   │                       ├── Props.cpp.o
+│   │   │   │       │   │   │                       ├── ShadowNodes.cpp.o
+│   │   │   │       │   │   │                       └── States.cpp.o
+│   │   │   │       │   │   └── cmake_install.cmake
+│   │   │   │       │   ├── build_file_index.txt
+│   │   │   │       │   ├── build.ninja
+│   │   │   │       │   ├── .cmake
+│   │   │   │       │   │   └── api
+│   │   │   │       │   │       └── v1
+│   │   │   │       │   │           ├── query
+│   │   │   │       │   │           │   └── client-agp
+│   │   │   │       │   │           │       ├── cache-v2
+│   │   │   │       │   │           │       ├── cmakeFiles-v1
+│   │   │   │       │   │           │       └── codemodel-v2
+│   │   │   │       │   │           └── reply
+│   │   │   │       │   │               ├── cache-v2-12df609e726de3820f61.json
+│   │   │   │       │   │               ├── cmakeFiles-v1-f9b735a9be83c61d7d4c.json
+│   │   │   │       │   │               ├── codemodel-v2-87f2b5948b3b1d67c375.json
+│   │   │   │       │   │               ├── directory-AsyncStorageSpec_autolinked_build-RelWithDebInfo-5db41afe5a002c8325d8.json
+│   │   │   │       │   │               ├── directory-.-RelWithDebInfo-f5ebdc15457944623624.json
+│   │   │   │       │   │               ├── directory-RNCSlider_autolinked_build-RelWithDebInfo-49cc91d6efb59d66a05c.json
+│   │   │   │       │   │               ├── directory-RNImagePickerSpec_autolinked_build-RelWithDebInfo-907e54d602f465198be3.json
+│   │   │   │       │   │               ├── directory-rnscreens_autolinked_build-RelWithDebInfo-13dd5165b766eedba376.json
+│   │   │   │       │   │               ├── directory-safeareacontext_autolinked_build-RelWithDebInfo-e7dadd0ee70437f72829.json
+│   │   │   │       │   │               ├── index-2026-05-30T06-17-46-0303.json
+│   │   │   │       │   │               ├── target-appmodules-RelWithDebInfo-15c440f56aac07068b6e.json
+│   │   │   │       │   │               ├── target-react_codegen_AsyncStorageSpec-RelWithDebInfo-882b655fcfdb3966d238.json
+│   │   │   │       │   │               ├── target-react_codegen_RNCSlider-RelWithDebInfo-2d786a4546e33d7fab18.json
+│   │   │   │       │   │               ├── target-react_codegen_RNImagePickerSpec-RelWithDebInfo-73059ec075b054d8e272.json
+│   │   │   │       │   │               ├── target-react_codegen_rnscreens-RelWithDebInfo-01e2be0f12df12d28545.json
+│   │   │   │       │   │               └── target-react_codegen_safeareacontext-RelWithDebInfo-2de9666c06f37ea9cb03.json
+│   │   │   │       │   ├── CMakeCache.txt
+│   │   │   │       │   ├── CMakeFiles
+│   │   │   │       │   │   ├── 3.22.1-g37088a8
+│   │   │   │       │   │   │   ├── CMakeCCompiler.cmake
+│   │   │   │       │   │   │   ├── CMakeCXXCompiler.cmake
+│   │   │   │       │   │   │   ├── CMakeDetermineCompilerABI_C.bin
+│   │   │   │       │   │   │   ├── CMakeDetermineCompilerABI_CXX.bin
+│   │   │   │       │   │   │   ├── CMakeSystem.cmake
+│   │   │   │       │   │   │   ├── CompilerIdC
+│   │   │   │       │   │   │   │   ├── CMakeCCompilerId.c
+│   │   │   │       │   │   │   │   ├── CMakeCCompilerId.o
+│   │   │   │       │   │   │   │   └── tmp
+│   │   │   │       │   │   │   └── CompilerIdCXX
+│   │   │   │       │   │   │       ├── CMakeCXXCompilerId.cpp
+│   │   │   │       │   │   │       ├── CMakeCXXCompilerId.o
+│   │   │   │       │   │   │       └── tmp
+│   │   │   │       │   │   ├── appmodules.dir
+│   │   │   │       │   │   │   ├── home
+│   │   │   │       │   │   │   │   └── kamala
+│   │   │   │       │   │   │   │       └── Documents
+│   │   │   │       │   │   │   │           └── ICT4D
+│   │   │   │       │   │   │   │               └── ICT4DL2
+│   │   │   │       │   │   │   │                   └── ICT4D202
+│   │   │   │       │   │   │   │                       └── TPS
+│   │   │   │       │   │   │   │                           └── CapCut
+│   │   │   │       │   │   │   │                               └── android
+│   │   │   │       │   │   │   │                                   └── app
+│   │   │   │       │   │   │   └── OnLoad.cpp.o
+│   │   │   │       │   │   ├── cmake.check_cache
+│   │   │   │       │   │   ├── CMakeError.log
+│   │   │   │       │   │   ├── _CMakeLTOTest-CXX
+│   │   │   │       │   │   │   ├── bin
+│   │   │   │       │   │   │   │   ├── build.ninja
+│   │   │   │       │   │   │   │   ├── CMakeCache.txt
+│   │   │   │       │   │   │   │   ├── CMakeFiles
+│   │   │   │       │   │   │   │   │   ├── boo.dir
+│   │   │   │       │   │   │   │   │   │   └── main.cpp.o
+│   │   │   │       │   │   │   │   │   ├── cmake.check_cache
+│   │   │   │       │   │   │   │   │   ├── foo.dir
+│   │   │   │       │   │   │   │   │   │   └── foo.cpp.o
+│   │   │   │       │   │   │   │   │   ├── rules.ninja
+│   │   │   │       │   │   │   │   │   └── TargetDirectories.txt
+│   │   │   │       │   │   │   │   ├── cmake_install.cmake
+│   │   │   │       │   │   │   │   ├── libfoo.a
+│   │   │   │       │   │   │   │   ├── .ninja_deps
+│   │   │   │       │   │   │   │   └── .ninja_log
+│   │   │   │       │   │   │   └── src
+│   │   │   │       │   │   │       ├── CMakeLists.txt
+│   │   │   │       │   │   │       ├── foo.cpp
+│   │   │   │       │   │   │       └── main.cpp
+│   │   │   │       │   │   ├── CMakeOutput.log
+│   │   │   │       │   │   ├── CMakeTmp
+│   │   │   │       │   │   ├── cmake.verify_globs
+│   │   │   │       │   │   ├── rules.ninja
+│   │   │   │       │   │   ├── TargetDirectories.txt
+│   │   │   │       │   │   └── VerifyGlobs.cmake
+│   │   │   │       │   ├── cmake_install.cmake
+│   │   │   │       │   ├── compile_commands.json
+│   │   │   │       │   ├── compile_commands.json.bin
+│   │   │   │       │   ├── configure_fingerprint.bin
+│   │   │   │       │   ├── metadata_generation_command.txt
+│   │   │   │       │   ├── .ninja_deps
+│   │   │   │       │   ├── .ninja_log
+│   │   │   │       │   ├── prefab_config.json
+│   │   │   │       │   ├── RNCSlider_autolinked_build
+│   │   │   │       │   │   ├── CMakeFiles
+│   │   │   │       │   │   │   └── react_codegen_RNCSlider.dir
+│   │   │   │       │   │   │       └── home
+│   │   │   │       │   │   │           └── kamala
+│   │   │   │       │   │   │               └── Documents
+│   │   │   │       │   │   │                   └── ICT4D
+│   │   │   │       │   │   │                       └── ICT4DL2
+│   │   │   │       │   │   │                           └── ICT4D202
+│   │   │   │       │   │   │                               └── TPS
+│   │   │   │       │   │   │                                   └── CapCut
+│   │   │   │       │   │   └── cmake_install.cmake
+│   │   │   │       │   ├── RNImagePickerSpec_autolinked_build
+│   │   │   │       │   │   ├── CMakeFiles
+│   │   │   │       │   │   │   └── react_codegen_RNImagePickerSpec.dir
+│   │   │   │       │   │   │       ├── react
+│   │   │   │       │   │   │       │   └── renderer
+│   │   │   │       │   │   │       │       └── components
+│   │   │   │       │   │   │       │           └── RNImagePickerSpec
+│   │   │   │       │   │   │       │               ├── ComponentDescriptors.cpp.o
+│   │   │   │       │   │   │       │               ├── EventEmitters.cpp.o
+│   │   │   │       │   │   │       │               ├── Props.cpp.o
+│   │   │   │       │   │   │       │               ├── ShadowNodes.cpp.o
+│   │   │   │       │   │   │       │               └── States.cpp.o
+│   │   │   │       │   │   │       └── RNImagePickerSpec-generated.cpp.o
+│   │   │   │       │   │   └── cmake_install.cmake
+│   │   │   │       │   ├── rnscreens_autolinked_build
+│   │   │   │       │   │   ├── CMakeFiles
+│   │   │   │       │   │   │   └── react_codegen_rnscreens.dir
+│   │   │   │       │   │   │       ├── home
+│   │   │   │       │   │   │       │   └── kamala
+│   │   │   │       │   │   │       │       └── Documents
+│   │   │   │       │   │   │       │           └── ICT4D
+│   │   │   │       │   │   │       │               └── ICT4DL2
+│   │   │   │       │   │   │       │                   └── ICT4D202
+│   │   │   │       │   │   │       │                       └── TPS
+│   │   │   │       │   │   │       │                           └── CapCut
+│   │   │   │       │   │   │       └── rnscreens.cpp.o
+│   │   │   │       │   │   └── cmake_install.cmake
+│   │   │   │       │   ├── safeareacontext_autolinked_build
+│   │   │   │       │   │   ├── CMakeFiles
+│   │   │   │       │   │   │   └── react_codegen_safeareacontext.dir
+│   │   │   │       │   │   │       └── home
+│   │   │   │       │   │   │           └── kamala
+│   │   │   │       │   │   │               └── Documents
+│   │   │   │       │   │   │                   └── ICT4D
+│   │   │   │       │   │   │                       └── ICT4DL2
+│   │   │   │       │   │   │                           └── ICT4D202
+│   │   │   │       │   │   │                               └── TPS
+│   │   │   │       │   │   │                                   └── CapCut
+│   │   │   │       │   │   └── cmake_install.cmake
+│   │   │   │       │   └── symbol_folder_index.txt
+│   │   │   │       ├── armeabi-v7a
+│   │   │   │       │   ├── additional_project_files.txt
+│   │   │   │       │   ├── android_gradle_build.json
+│   │   │   │       │   ├── android_gradle_build_mini.json
+│   │   │   │       │   ├── AsyncStorageSpec_autolinked_build
+│   │   │   │       │   │   ├── CMakeFiles
+│   │   │   │       │   │   │   └── react_codegen_AsyncStorageSpec.dir
+│   │   │   │       │   │   │       ├── AsyncStorageSpec-generated.cpp.o
+│   │   │   │       │   │   │       └── react
+│   │   │   │       │   │   │           └── renderer
+│   │   │   │       │   │   │               └── components
+│   │   │   │       │   │   │                   └── AsyncStorageSpec
+│   │   │   │       │   │   │                       ├── ComponentDescriptors.cpp.o
+│   │   │   │       │   │   │                       ├── EventEmitters.cpp.o
+│   │   │   │       │   │   │                       ├── Props.cpp.o
+│   │   │   │       │   │   │                       ├── ShadowNodes.cpp.o
+│   │   │   │       │   │   │                       └── States.cpp.o
+│   │   │   │       │   │   └── cmake_install.cmake
+│   │   │   │       │   ├── build_file_index.txt
+│   │   │   │       │   ├── build.ninja
+│   │   │   │       │   ├── .cmake
+│   │   │   │       │   │   └── api
+│   │   │   │       │   │       └── v1
+│   │   │   │       │   │           ├── query
+│   │   │   │       │   │           │   └── client-agp
+│   │   │   │       │   │           │       ├── cache-v2
+│   │   │   │       │   │           │       ├── cmakeFiles-v1
+│   │   │   │       │   │           │       └── codemodel-v2
+│   │   │   │       │   │           └── reply
+│   │   │   │       │   │               ├── cache-v2-3fa7e1dc054a5d9f22d6.json
+│   │   │   │       │   │               ├── cmakeFiles-v1-331813d836825bf23bef.json
+│   │   │   │       │   │               ├── codemodel-v2-58f815fdb132b2b5a99f.json
+│   │   │   │       │   │               ├── directory-AsyncStorageSpec_autolinked_build-RelWithDebInfo-5db41afe5a002c8325d8.json
+│   │   │   │       │   │               ├── directory-.-RelWithDebInfo-f5ebdc15457944623624.json
+│   │   │   │       │   │               ├── directory-RNCSlider_autolinked_build-RelWithDebInfo-49cc91d6efb59d66a05c.json
+│   │   │   │       │   │               ├── directory-RNImagePickerSpec_autolinked_build-RelWithDebInfo-907e54d602f465198be3.json
+│   │   │   │       │   │               ├── directory-rnscreens_autolinked_build-RelWithDebInfo-13dd5165b766eedba376.json
+│   │   │   │       │   │               ├── directory-safeareacontext_autolinked_build-RelWithDebInfo-e7dadd0ee70437f72829.json
+│   │   │   │       │   │               ├── index-2026-05-30T06-18-56-0779.json
+│   │   │   │       │   │               ├── target-appmodules-RelWithDebInfo-8b646b8214633f75746b.json
+│   │   │   │       │   │               ├── target-react_codegen_AsyncStorageSpec-RelWithDebInfo-4795b76a59a1c93ade2a.json
+│   │   │   │       │   │               ├── target-react_codegen_RNCSlider-RelWithDebInfo-8e00cb1924d5f7512657.json
+│   │   │   │       │   │               ├── target-react_codegen_RNImagePickerSpec-RelWithDebInfo-be4fa2ab2974e62a2a5f.json
+│   │   │   │       │   │               ├── target-react_codegen_rnscreens-RelWithDebInfo-6b409b865f7b9c358f11.json
+│   │   │   │       │   │               └── target-react_codegen_safeareacontext-RelWithDebInfo-06897fecb7393be5582f.json
+│   │   │   │       │   ├── CMakeCache.txt
+│   │   │   │       │   ├── CMakeFiles
+│   │   │   │       │   │   ├── 3.22.1-g37088a8
+│   │   │   │       │   │   │   ├── CMakeCCompiler.cmake
+│   │   │   │       │   │   │   ├── CMakeCXXCompiler.cmake
+│   │   │   │       │   │   │   ├── CMakeDetermineCompilerABI_C.bin
+│   │   │   │       │   │   │   ├── CMakeDetermineCompilerABI_CXX.bin
+│   │   │   │       │   │   │   ├── CMakeSystem.cmake
+│   │   │   │       │   │   │   ├── CompilerIdC
+│   │   │   │       │   │   │   │   ├── CMakeCCompilerId.c
+│   │   │   │       │   │   │   │   ├── CMakeCCompilerId.o
+│   │   │   │       │   │   │   │   └── tmp
+│   │   │   │       │   │   │   └── CompilerIdCXX
+│   │   │   │       │   │   │       ├── CMakeCXXCompilerId.cpp
+│   │   │   │       │   │   │       ├── CMakeCXXCompilerId.o
+│   │   │   │       │   │   │       └── tmp
+│   │   │   │       │   │   ├── appmodules.dir
+│   │   │   │       │   │   │   ├── home
+│   │   │   │       │   │   │   │   └── kamala
+│   │   │   │       │   │   │   │       └── Documents
+│   │   │   │       │   │   │   │           └── ICT4D
+│   │   │   │       │   │   │   │               └── ICT4DL2
+│   │   │   │       │   │   │   │                   └── ICT4D202
+│   │   │   │       │   │   │   │                       └── TPS
+│   │   │   │       │   │   │   │                           └── CapCut
+│   │   │   │       │   │   │   │                               └── android
+│   │   │   │       │   │   │   │                                   └── app
+│   │   │   │       │   │   │   └── OnLoad.cpp.o
+│   │   │   │       │   │   ├── cmake.check_cache
+│   │   │   │       │   │   ├── CMakeError.log
+│   │   │   │       │   │   ├── _CMakeLTOTest-CXX
+│   │   │   │       │   │   │   ├── bin
+│   │   │   │       │   │   │   │   ├── build.ninja
+│   │   │   │       │   │   │   │   ├── CMakeCache.txt
+│   │   │   │       │   │   │   │   ├── CMakeFiles
+│   │   │   │       │   │   │   │   │   ├── boo.dir
+│   │   │   │       │   │   │   │   │   │   └── main.cpp.o
+│   │   │   │       │   │   │   │   │   ├── cmake.check_cache
+│   │   │   │       │   │   │   │   │   ├── foo.dir
+│   │   │   │       │   │   │   │   │   │   └── foo.cpp.o
+│   │   │   │       │   │   │   │   │   ├── rules.ninja
+│   │   │   │       │   │   │   │   │   └── TargetDirectories.txt
+│   │   │   │       │   │   │   │   ├── cmake_install.cmake
+│   │   │   │       │   │   │   │   ├── libfoo.a
+│   │   │   │       │   │   │   │   ├── .ninja_deps
+│   │   │   │       │   │   │   │   └── .ninja_log
+│   │   │   │       │   │   │   └── src
+│   │   │   │       │   │   │       ├── CMakeLists.txt
+│   │   │   │       │   │   │       ├── foo.cpp
+│   │   │   │       │   │   │       └── main.cpp
+│   │   │   │       │   │   ├── CMakeOutput.log
+│   │   │   │       │   │   ├── CMakeTmp
+│   │   │   │       │   │   ├── cmake.verify_globs
+│   │   │   │       │   │   ├── rules.ninja
+│   │   │   │       │   │   ├── TargetDirectories.txt
+│   │   │   │       │   │   └── VerifyGlobs.cmake
+│   │   │   │       │   ├── cmake_install.cmake
+│   │   │   │       │   ├── compile_commands.json
+│   │   │   │       │   ├── compile_commands.json.bin
+│   │   │   │       │   ├── configure_fingerprint.bin
+│   │   │   │       │   ├── metadata_generation_command.txt
+│   │   │   │       │   ├── .ninja_deps
+│   │   │   │       │   ├── .ninja_log
+│   │   │   │       │   ├── prefab_config.json
+│   │   │   │       │   ├── RNCSlider_autolinked_build
+│   │   │   │       │   │   ├── CMakeFiles
+│   │   │   │       │   │   │   └── react_codegen_RNCSlider.dir
+│   │   │   │       │   │   │       └── home
+│   │   │   │       │   │   │           └── kamala
+│   │   │   │       │   │   │               └── Documents
+│   │   │   │       │   │   │                   └── ICT4D
+│   │   │   │       │   │   │                       └── ICT4DL2
+│   │   │   │       │   │   │                           └── ICT4D202
+│   │   │   │       │   │   │                               └── TPS
+│   │   │   │       │   │   │                                   └── CapCut
+│   │   │   │       │   │   └── cmake_install.cmake
+│   │   │   │       │   ├── RNImagePickerSpec_autolinked_build
+│   │   │   │       │   │   ├── CMakeFiles
+│   │   │   │       │   │   │   └── react_codegen_RNImagePickerSpec.dir
+│   │   │   │       │   │   │       ├── react
+│   │   │   │       │   │   │       │   └── renderer
+│   │   │   │       │   │   │       │       └── components
+│   │   │   │       │   │   │       │           └── RNImagePickerSpec
+│   │   │   │       │   │   │       │               ├── ComponentDescriptors.cpp.o
+│   │   │   │       │   │   │       │               ├── EventEmitters.cpp.o
+│   │   │   │       │   │   │       │               ├── Props.cpp.o
+│   │   │   │       │   │   │       │               ├── ShadowNodes.cpp.o
+│   │   │   │       │   │   │       │               └── States.cpp.o
+│   │   │   │       │   │   │       └── RNImagePickerSpec-generated.cpp.o
+│   │   │   │       │   │   └── cmake_install.cmake
+│   │   │   │       │   ├── rnscreens_autolinked_build
+│   │   │   │       │   │   ├── CMakeFiles
+│   │   │   │       │   │   │   └── react_codegen_rnscreens.dir
+│   │   │   │       │   │   │       ├── home
+│   │   │   │       │   │   │       │   └── kamala
+│   │   │   │       │   │   │       │       └── Documents
+│   │   │   │       │   │   │       │           └── ICT4D
+│   │   │   │       │   │   │       │               └── ICT4DL2
+│   │   │   │       │   │   │       │                   └── ICT4D202
+│   │   │   │       │   │   │       │                       └── TPS
+│   │   │   │       │   │   │       │                           └── CapCut
+│   │   │   │       │   │   │       └── rnscreens.cpp.o
+│   │   │   │       │   │   └── cmake_install.cmake
+│   │   │   │       │   ├── safeareacontext_autolinked_build
+│   │   │   │       │   │   ├── CMakeFiles
+│   │   │   │       │   │   │   └── react_codegen_safeareacontext.dir
+│   │   │   │       │   │   │       └── home
+│   │   │   │       │   │   │           └── kamala
+│   │   │   │       │   │   │               └── Documents
+│   │   │   │       │   │   │                   └── ICT4D
+│   │   │   │       │   │   │                       └── ICT4DL2
+│   │   │   │       │   │   │                           └── ICT4D202
+│   │   │   │       │   │   │                               └── TPS
+│   │   │   │       │   │   │                                   └── CapCut
+│   │   │   │       │   │   └── cmake_install.cmake
+│   │   │   │       │   └── symbol_folder_index.txt
+│   │   │   │       ├── hash_key.txt
+│   │   │   │       ├── prefab
+│   │   │   │       │   ├── arm64-v8a
+│   │   │   │       │   │   └── prefab
+│   │   │   │       │   │       └── lib
+│   │   │   │       │   │           └── aarch64-linux-android
+│   │   │   │       │   │               └── cmake
+│   │   │   │       │   │                   ├── fbjni
+│   │   │   │       │   │                   │   ├── fbjniConfig.cmake
+│   │   │   │       │   │                   │   └── fbjniConfigVersion.cmake
+│   │   │   │       │   │                   ├── hermes-engine
+│   │   │   │       │   │                   │   ├── hermes-engineConfig.cmake
+│   │   │   │       │   │                   │   └── hermes-engineConfigVersion.cmake
+│   │   │   │       │   │                   └── ReactAndroid
+│   │   │   │       │   │                       ├── ReactAndroidConfig.cmake
+│   │   │   │       │   │                       └── ReactAndroidConfigVersion.cmake
+│   │   │   │       │   ├── armeabi-v7a
+│   │   │   │       │   │   └── prefab
+│   │   │   │       │   │       └── lib
+│   │   │   │       │   │           └── arm-linux-androideabi
+│   │   │   │       │   │               └── cmake
+│   │   │   │       │   │                   ├── fbjni
+│   │   │   │       │   │                   │   ├── fbjniConfig.cmake
+│   │   │   │       │   │                   │   └── fbjniConfigVersion.cmake
+│   │   │   │       │   │                   ├── hermes-engine
+│   │   │   │       │   │                   │   ├── hermes-engineConfig.cmake
+│   │   │   │       │   │                   │   └── hermes-engineConfigVersion.cmake
+│   │   │   │       │   │                   └── ReactAndroid
+│   │   │   │       │   │                       ├── ReactAndroidConfig.cmake
+│   │   │   │       │   │                       └── ReactAndroidConfigVersion.cmake
+│   │   │   │       │   ├── x86
+│   │   │   │       │   │   └── prefab
+│   │   │   │       │   │       └── lib
+│   │   │   │       │   │           └── i686-linux-android
+│   │   │   │       │   │               └── cmake
+│   │   │   │       │   │                   ├── fbjni
+│   │   │   │       │   │                   │   ├── fbjniConfig.cmake
+│   │   │   │       │   │                   │   └── fbjniConfigVersion.cmake
+│   │   │   │       │   │                   ├── hermes-engine
+│   │   │   │       │   │                   │   ├── hermes-engineConfig.cmake
+│   │   │   │       │   │                   │   └── hermes-engineConfigVersion.cmake
+│   │   │   │       │   │                   └── ReactAndroid
+│   │   │   │       │   │                       ├── ReactAndroidConfig.cmake
+│   │   │   │       │   │                       └── ReactAndroidConfigVersion.cmake
+│   │   │   │       │   └── x86_64
+│   │   │   │       │       └── prefab
+│   │   │   │       │           └── lib
+│   │   │   │       │               └── x86_64-linux-android
+│   │   │   │       │                   └── cmake
+│   │   │   │       │                       ├── fbjni
+│   │   │   │       │                       │   ├── fbjniConfig.cmake
+│   │   │   │       │                       │   └── fbjniConfigVersion.cmake
+│   │   │   │       │                       ├── hermes-engine
+│   │   │   │       │                       │   ├── hermes-engineConfig.cmake
+│   │   │   │       │                       │   └── hermes-engineConfigVersion.cmake
+│   │   │   │       │                       └── ReactAndroid
+│   │   │   │       │                           ├── ReactAndroidConfig.cmake
+│   │   │   │       │                           └── ReactAndroidConfigVersion.cmake
+│   │   │   │       ├── x86
+│   │   │   │       │   ├── additional_project_files.txt
+│   │   │   │       │   ├── android_gradle_build.json
+│   │   │   │       │   ├── android_gradle_build_mini.json
+│   │   │   │       │   ├── AsyncStorageSpec_autolinked_build
+│   │   │   │       │   │   ├── CMakeFiles
+│   │   │   │       │   │   │   └── react_codegen_AsyncStorageSpec.dir
+│   │   │   │       │   │   │       ├── AsyncStorageSpec-generated.cpp.o
+│   │   │   │       │   │   │       └── react
+│   │   │   │       │   │   │           └── renderer
+│   │   │   │       │   │   │               └── components
+│   │   │   │       │   │   │                   └── AsyncStorageSpec
+│   │   │   │       │   │   │                       ├── ComponentDescriptors.cpp.o
+│   │   │   │       │   │   │                       ├── EventEmitters.cpp.o
+│   │   │   │       │   │   │                       ├── Props.cpp.o
+│   │   │   │       │   │   │                       ├── ShadowNodes.cpp.o
+│   │   │   │       │   │   │                       └── States.cpp.o
+│   │   │   │       │   │   └── cmake_install.cmake
+│   │   │   │       │   ├── build_file_index.txt
+│   │   │   │       │   ├── build.ninja
+│   │   │   │       │   ├── .cmake
+│   │   │   │       │   │   └── api
+│   │   │   │       │   │       └── v1
+│   │   │   │       │   │           ├── query
+│   │   │   │       │   │           │   └── client-agp
+│   │   │   │       │   │           │       ├── cache-v2
+│   │   │   │       │   │           │       ├── cmakeFiles-v1
+│   │   │   │       │   │           │       └── codemodel-v2
+│   │   │   │       │   │           └── reply
+│   │   │   │       │   │               ├── cache-v2-de8b11cc310639cb5b3c.json
+│   │   │   │       │   │               ├── cmakeFiles-v1-1a0b51803de3791d071f.json
+│   │   │   │       │   │               ├── codemodel-v2-e12fe1e2301c93affbdb.json
+│   │   │   │       │   │               ├── directory-AsyncStorageSpec_autolinked_build-RelWithDebInfo-5db41afe5a002c8325d8.json
+│   │   │   │       │   │               ├── directory-.-RelWithDebInfo-f5ebdc15457944623624.json
+│   │   │   │       │   │               ├── directory-RNCSlider_autolinked_build-RelWithDebInfo-49cc91d6efb59d66a05c.json
+│   │   │   │       │   │               ├── directory-RNImagePickerSpec_autolinked_build-RelWithDebInfo-907e54d602f465198be3.json
+│   │   │   │       │   │               ├── directory-rnscreens_autolinked_build-RelWithDebInfo-13dd5165b766eedba376.json
+│   │   │   │       │   │               ├── directory-safeareacontext_autolinked_build-RelWithDebInfo-e7dadd0ee70437f72829.json
+│   │   │   │       │   │               ├── index-2026-05-30T06-20-04-0895.json
+│   │   │   │       │   │               ├── target-appmodules-RelWithDebInfo-f9c7a971493677358bd0.json
+│   │   │   │       │   │               ├── target-react_codegen_AsyncStorageSpec-RelWithDebInfo-882b655fcfdb3966d238.json
+│   │   │   │       │   │               ├── target-react_codegen_RNCSlider-RelWithDebInfo-867091082910b5c533df.json
+│   │   │   │       │   │               ├── target-react_codegen_RNImagePickerSpec-RelWithDebInfo-73059ec075b054d8e272.json
+│   │   │   │       │   │               ├── target-react_codegen_rnscreens-RelWithDebInfo-afe13fa3186d8b74a323.json
+│   │   │   │       │   │               └── target-react_codegen_safeareacontext-RelWithDebInfo-1ddf6c602d8f50a34e0e.json
+│   │   │   │       │   ├── CMakeCache.txt
+│   │   │   │       │   ├── CMakeFiles
+│   │   │   │       │   │   ├── 3.22.1-g37088a8
+│   │   │   │       │   │   │   ├── CMakeCCompiler.cmake
+│   │   │   │       │   │   │   ├── CMakeCXXCompiler.cmake
+│   │   │   │       │   │   │   ├── CMakeDetermineCompilerABI_C.bin
+│   │   │   │       │   │   │   ├── CMakeDetermineCompilerABI_CXX.bin
+│   │   │   │       │   │   │   ├── CMakeSystem.cmake
+│   │   │   │       │   │   │   ├── CompilerIdC
+│   │   │   │       │   │   │   │   ├── CMakeCCompilerId.c
+│   │   │   │       │   │   │   │   ├── CMakeCCompilerId.o
+│   │   │   │       │   │   │   │   └── tmp
+│   │   │   │       │   │   │   └── CompilerIdCXX
+│   │   │   │       │   │   │       ├── CMakeCXXCompilerId.cpp
+│   │   │   │       │   │   │       ├── CMakeCXXCompilerId.o
+│   │   │   │       │   │   │       └── tmp
+│   │   │   │       │   │   ├── appmodules.dir
+│   │   │   │       │   │   │   ├── home
+│   │   │   │       │   │   │   │   └── kamala
+│   │   │   │       │   │   │   │       └── Documents
+│   │   │   │       │   │   │   │           └── ICT4D
+│   │   │   │       │   │   │   │               └── ICT4DL2
+│   │   │   │       │   │   │   │                   └── ICT4D202
+│   │   │   │       │   │   │   │                       └── TPS
+│   │   │   │       │   │   │   │                           └── CapCut
+│   │   │   │       │   │   │   │                               └── android
+│   │   │   │       │   │   │   │                                   └── app
+│   │   │   │       │   │   │   └── OnLoad.cpp.o
+│   │   │   │       │   │   ├── cmake.check_cache
+│   │   │   │       │   │   ├── CMakeError.log
+│   │   │   │       │   │   ├── _CMakeLTOTest-CXX
+│   │   │   │       │   │   │   ├── bin
+│   │   │   │       │   │   │   │   ├── build.ninja
+│   │   │   │       │   │   │   │   ├── CMakeCache.txt
+│   │   │   │       │   │   │   │   ├── CMakeFiles
+│   │   │   │       │   │   │   │   │   ├── boo.dir
+│   │   │   │       │   │   │   │   │   │   └── main.cpp.o
+│   │   │   │       │   │   │   │   │   ├── cmake.check_cache
+│   │   │   │       │   │   │   │   │   ├── foo.dir
+│   │   │   │       │   │   │   │   │   │   └── foo.cpp.o
+│   │   │   │       │   │   │   │   │   ├── rules.ninja
+│   │   │   │       │   │   │   │   │   └── TargetDirectories.txt
+│   │   │   │       │   │   │   │   ├── cmake_install.cmake
+│   │   │   │       │   │   │   │   ├── libfoo.a
+│   │   │   │       │   │   │   │   ├── .ninja_deps
+│   │   │   │       │   │   │   │   └── .ninja_log
+│   │   │   │       │   │   │   └── src
+│   │   │   │       │   │   │       ├── CMakeLists.txt
+│   │   │   │       │   │   │       ├── foo.cpp
+│   │   │   │       │   │   │       └── main.cpp
+│   │   │   │       │   │   ├── CMakeOutput.log
+│   │   │   │       │   │   ├── CMakeTmp
+│   │   │   │       │   │   ├── cmake.verify_globs
+│   │   │   │       │   │   ├── rules.ninja
+│   │   │   │       │   │   ├── TargetDirectories.txt
+│   │   │   │       │   │   └── VerifyGlobs.cmake
+│   │   │   │       │   ├── cmake_install.cmake
+│   │   │   │       │   ├── compile_commands.json
+│   │   │   │       │   ├── compile_commands.json.bin
+│   │   │   │       │   ├── configure_fingerprint.bin
+│   │   │   │       │   ├── metadata_generation_command.txt
+│   │   │   │       │   ├── .ninja_deps
+│   │   │   │       │   ├── .ninja_log
+│   │   │   │       │   ├── prefab_config.json
+│   │   │   │       │   ├── RNCSlider_autolinked_build
+│   │   │   │       │   │   ├── CMakeFiles
+│   │   │   │       │   │   │   └── react_codegen_RNCSlider.dir
+│   │   │   │       │   │   │       └── home
+│   │   │   │       │   │   │           └── kamala
+│   │   │   │       │   │   │               └── Documents
+│   │   │   │       │   │   │                   └── ICT4D
+│   │   │   │       │   │   │                       └── ICT4DL2
+│   │   │   │       │   │   │                           └── ICT4D202
+│   │   │   │       │   │   │                               └── TPS
+│   │   │   │       │   │   │                                   └── CapCut
+│   │   │   │       │   │   └── cmake_install.cmake
+│   │   │   │       │   ├── RNImagePickerSpec_autolinked_build
+│   │   │   │       │   │   ├── CMakeFiles
+│   │   │   │       │   │   │   └── react_codegen_RNImagePickerSpec.dir
+│   │   │   │       │   │   │       ├── react
+│   │   │   │       │   │   │       │   └── renderer
+│   │   │   │       │   │   │       │       └── components
+│   │   │   │       │   │   │       │           └── RNImagePickerSpec
+│   │   │   │       │   │   │       │               ├── ComponentDescriptors.cpp.o
+│   │   │   │       │   │   │       │               ├── EventEmitters.cpp.o
+│   │   │   │       │   │   │       │               ├── Props.cpp.o
+│   │   │   │       │   │   │       │               ├── ShadowNodes.cpp.o
+│   │   │   │       │   │   │       │               └── States.cpp.o
+│   │   │   │       │   │   │       └── RNImagePickerSpec-generated.cpp.o
+│   │   │   │       │   │   └── cmake_install.cmake
+│   │   │   │       │   ├── rnscreens_autolinked_build
+│   │   │   │       │   │   ├── CMakeFiles
+│   │   │   │       │   │   │   └── react_codegen_rnscreens.dir
+│   │   │   │       │   │   │       ├── home
+│   │   │   │       │   │   │       │   └── kamala
+│   │   │   │       │   │   │       │       └── Documents
+│   │   │   │       │   │   │       │           └── ICT4D
+│   │   │   │       │   │   │       │               └── ICT4DL2
+│   │   │   │       │   │   │       │                   └── ICT4D202
+│   │   │   │       │   │   │       │                       └── TPS
+│   │   │   │       │   │   │       │                           └── CapCut
+│   │   │   │       │   │   │       └── rnscreens.cpp.o
+│   │   │   │       │   │   └── cmake_install.cmake
+│   │   │   │       │   ├── safeareacontext_autolinked_build
+│   │   │   │       │   │   ├── CMakeFiles
+│   │   │   │       │   │   │   └── react_codegen_safeareacontext.dir
+│   │   │   │       │   │   │       └── home
+│   │   │   │       │   │   │           └── kamala
+│   │   │   │       │   │   │               └── Documents
+│   │   │   │       │   │   │                   └── ICT4D
+│   │   │   │       │   │   │                       └── ICT4DL2
+│   │   │   │       │   │   │                           └── ICT4D202
+│   │   │   │       │   │   │                               └── TPS
+│   │   │   │       │   │   │                                   └── CapCut
+│   │   │   │       │   │   └── cmake_install.cmake
+│   │   │   │       │   └── symbol_folder_index.txt
+│   │   │   │       └── x86_64
+│   │   │   │           ├── additional_project_files.txt
+│   │   │   │           ├── android_gradle_build.json
+│   │   │   │           ├── android_gradle_build_mini.json
+│   │   │   │           ├── AsyncStorageSpec_autolinked_build
+│   │   │   │           │   ├── CMakeFiles
+│   │   │   │           │   │   └── react_codegen_AsyncStorageSpec.dir
+│   │   │   │           │   │       ├── AsyncStorageSpec-generated.cpp.o
+│   │   │   │           │   │       └── react
+│   │   │   │           │   │           └── renderer
+│   │   │   │           │   │               └── components
+│   │   │   │           │   │                   └── AsyncStorageSpec
+│   │   │   │           │   │                       ├── ComponentDescriptors.cpp.o
+│   │   │   │           │   │                       ├── EventEmitters.cpp.o
+│   │   │   │           │   │                       ├── Props.cpp.o
+│   │   │   │           │   │                       ├── ShadowNodes.cpp.o
+│   │   │   │           │   │                       └── States.cpp.o
+│   │   │   │           │   └── cmake_install.cmake
+│   │   │   │           ├── build_file_index.txt
+│   │   │   │           ├── build.ninja
+│   │   │   │           ├── .cmake
+│   │   │   │           │   └── api
+│   │   │   │           │       └── v1
+│   │   │   │           │           ├── query
+│   │   │   │           │           │   └── client-agp
+│   │   │   │           │           │       ├── cache-v2
+│   │   │   │           │           │       ├── cmakeFiles-v1
+│   │   │   │           │           │       └── codemodel-v2
+│   │   │   │           │           └── reply
+│   │   │   │           │               ├── cache-v2-9112f23df2a0bdbe0d2c.json
+│   │   │   │           │               ├── cmakeFiles-v1-c81b2bf8d059d5eeb35c.json
+│   │   │   │           │               ├── codemodel-v2-0b4ad858cdcf59d9410b.json
+│   │   │   │           │               ├── directory-AsyncStorageSpec_autolinked_build-RelWithDebInfo-5db41afe5a002c8325d8.json
+│   │   │   │           │               ├── directory-.-RelWithDebInfo-f5ebdc15457944623624.json
+│   │   │   │           │               ├── directory-RNCSlider_autolinked_build-RelWithDebInfo-49cc91d6efb59d66a05c.json
+│   │   │   │           │               ├── directory-RNImagePickerSpec_autolinked_build-RelWithDebInfo-907e54d602f465198be3.json
+│   │   │   │           │               ├── directory-rnscreens_autolinked_build-RelWithDebInfo-13dd5165b766eedba376.json
+│   │   │   │           │               ├── directory-safeareacontext_autolinked_build-RelWithDebInfo-e7dadd0ee70437f72829.json
+│   │   │   │           │               ├── index-2026-05-30T06-21-12-0786.json
+│   │   │   │           │               ├── target-appmodules-RelWithDebInfo-dd31a9b844d1ce241158.json
+│   │   │   │           │               ├── target-react_codegen_AsyncStorageSpec-RelWithDebInfo-882b655fcfdb3966d238.json
+│   │   │   │           │               ├── target-react_codegen_RNCSlider-RelWithDebInfo-23ecd5a5ff6d91b2c4e2.json
+│   │   │   │           │               ├── target-react_codegen_RNImagePickerSpec-RelWithDebInfo-73059ec075b054d8e272.json
+│   │   │   │           │               ├── target-react_codegen_rnscreens-RelWithDebInfo-94ec4e5629b84362bff5.json
+│   │   │   │           │               └── target-react_codegen_safeareacontext-RelWithDebInfo-564d98d5b370f998c2f1.json
+│   │   │   │           ├── CMakeCache.txt
+│   │   │   │           ├── CMakeFiles
+│   │   │   │           │   ├── 3.22.1-g37088a8
+│   │   │   │           │   │   ├── CMakeCCompiler.cmake
+│   │   │   │           │   │   ├── CMakeCXXCompiler.cmake
+│   │   │   │           │   │   ├── CMakeDetermineCompilerABI_C.bin
+│   │   │   │           │   │   ├── CMakeDetermineCompilerABI_CXX.bin
+│   │   │   │           │   │   ├── CMakeSystem.cmake
+│   │   │   │           │   │   ├── CompilerIdC
+│   │   │   │           │   │   │   ├── CMakeCCompilerId.c
+│   │   │   │           │   │   │   ├── CMakeCCompilerId.o
+│   │   │   │           │   │   │   └── tmp
+│   │   │   │           │   │   └── CompilerIdCXX
+│   │   │   │           │   │       ├── CMakeCXXCompilerId.cpp
+│   │   │   │           │   │       ├── CMakeCXXCompilerId.o
+│   │   │   │           │   │       └── tmp
+│   │   │   │           │   ├── appmodules.dir
+│   │   │   │           │   │   ├── home
+│   │   │   │           │   │   │   └── kamala
+│   │   │   │           │   │   │       └── Documents
+│   │   │   │           │   │   │           └── ICT4D
+│   │   │   │           │   │   │               └── ICT4DL2
+│   │   │   │           │   │   │                   └── ICT4D202
+│   │   │   │           │   │   │                       └── TPS
+│   │   │   │           │   │   │                           └── CapCut
+│   │   │   │           │   │   │                               └── android
+│   │   │   │           │   │   │                                   └── app
+│   │   │   │           │   │   └── OnLoad.cpp.o
+│   │   │   │           │   ├── cmake.check_cache
+│   │   │   │           │   ├── CMakeError.log
+│   │   │   │           │   ├── _CMakeLTOTest-CXX
+│   │   │   │           │   │   ├── bin
+│   │   │   │           │   │   │   ├── build.ninja
+│   │   │   │           │   │   │   ├── CMakeCache.txt
+│   │   │   │           │   │   │   ├── CMakeFiles
+│   │   │   │           │   │   │   │   ├── boo.dir
+│   │   │   │           │   │   │   │   │   └── main.cpp.o
+│   │   │   │           │   │   │   │   ├── cmake.check_cache
+│   │   │   │           │   │   │   │   ├── foo.dir
+│   │   │   │           │   │   │   │   │   └── foo.cpp.o
+│   │   │   │           │   │   │   │   ├── rules.ninja
+│   │   │   │           │   │   │   │   └── TargetDirectories.txt
+│   │   │   │           │   │   │   ├── cmake_install.cmake
+│   │   │   │           │   │   │   ├── libfoo.a
+│   │   │   │           │   │   │   ├── .ninja_deps
+│   │   │   │           │   │   │   └── .ninja_log
+│   │   │   │           │   │   └── src
+│   │   │   │           │   │       ├── CMakeLists.txt
+│   │   │   │           │   │       ├── foo.cpp
+│   │   │   │           │   │       └── main.cpp
+│   │   │   │           │   ├── CMakeOutput.log
+│   │   │   │           │   ├── CMakeTmp
+│   │   │   │           │   ├── cmake.verify_globs
+│   │   │   │           │   ├── rules.ninja
+│   │   │   │           │   ├── TargetDirectories.txt
+│   │   │   │           │   └── VerifyGlobs.cmake
+│   │   │   │           ├── cmake_install.cmake
+│   │   │   │           ├── compile_commands.json
+│   │   │   │           ├── compile_commands.json.bin
+│   │   │   │           ├── configure_fingerprint.bin
+│   │   │   │           ├── metadata_generation_command.txt
+│   │   │   │           ├── .ninja_deps
+│   │   │   │           ├── .ninja_log
+│   │   │   │           ├── prefab_config.json
+│   │   │   │           ├── RNCSlider_autolinked_build
+│   │   │   │           │   ├── CMakeFiles
+│   │   │   │           │   │   └── react_codegen_RNCSlider.dir
+│   │   │   │           │   │       └── home
+│   │   │   │           │   │           └── kamala
+│   │   │   │           │   │               └── Documents
+│   │   │   │           │   │                   └── ICT4D
+│   │   │   │           │   │                       └── ICT4DL2
+│   │   │   │           │   │                           └── ICT4D202
+│   │   │   │           │   │                               └── TPS
+│   │   │   │           │   │                                   └── CapCut
+│   │   │   │           │   └── cmake_install.cmake
+│   │   │   │           ├── RNImagePickerSpec_autolinked_build
+│   │   │   │           │   ├── CMakeFiles
+│   │   │   │           │   │   └── react_codegen_RNImagePickerSpec.dir
+│   │   │   │           │   │       ├── react
+│   │   │   │           │   │       │   └── renderer
+│   │   │   │           │   │       │       └── components
+│   │   │   │           │   │       │           └── RNImagePickerSpec
+│   │   │   │           │   │       │               ├── ComponentDescriptors.cpp.o
+│   │   │   │           │   │       │               ├── EventEmitters.cpp.o
+│   │   │   │           │   │       │               ├── Props.cpp.o
+│   │   │   │           │   │       │               ├── ShadowNodes.cpp.o
+│   │   │   │           │   │       │               └── States.cpp.o
+│   │   │   │           │   │       └── RNImagePickerSpec-generated.cpp.o
+│   │   │   │           │   └── cmake_install.cmake
+│   │   │   │           ├── rnscreens_autolinked_build
+│   │   │   │           │   ├── CMakeFiles
+│   │   │   │           │   │   └── react_codegen_rnscreens.dir
+│   │   │   │           │   │       ├── home
+│   │   │   │           │   │       │   └── kamala
+│   │   │   │           │   │       │       └── Documents
+│   │   │   │           │   │       │           └── ICT4D
+│   │   │   │           │   │       │               └── ICT4DL2
+│   │   │   │           │   │       │                   └── ICT4D202
+│   │   │   │           │   │       │                       └── TPS
+│   │   │   │           │   │       │                           └── CapCut
+│   │   │   │           │   │       └── rnscreens.cpp.o
+│   │   │   │           │   └── cmake_install.cmake
+│   │   │   │           ├── safeareacontext_autolinked_build
+│   │   │   │           │   ├── CMakeFiles
+│   │   │   │           │   │   └── react_codegen_safeareacontext.dir
+│   │   │   │           │   │       └── home
+│   │   │   │           │   │           └── kamala
+│   │   │   │           │   │               └── Documents
+│   │   │   │           │   │                   └── ICT4D
+│   │   │   │           │   │                       └── ICT4DL2
+│   │   │   │           │   │                           └── ICT4D202
+│   │   │   │           │   │                               └── TPS
+│   │   │   │           │   │                                   └── CapCut
+│   │   │   │           │   └── cmake_install.cmake
+│   │   │   │           └── symbol_folder_index.txt
+│   │   │   └── tools
+│   │   │       ├── debug
+│   │   │       │   ├── arm64-v8a
+│   │   │       │   │   └── compile_commands.json
+│   │   │       │   ├── armeabi-v7a
+│   │   │       │   │   └── compile_commands.json
+│   │   │       │   ├── x86
+│   │   │       │   │   └── compile_commands.json
+│   │   │       │   └── x86_64
+│   │   │       │       └── compile_commands.json
+│   │   │       └── release
+│   │   │           ├── arm64-v8a
+│   │   │           │   └── compile_commands.json
+│   │   │           ├── armeabi-v7a
+│   │   │           │   └── compile_commands.json
+│   │   │           ├── x86
+│   │   │           │   └── compile_commands.json
+│   │   │           └── x86_64
+│   │   │               └── compile_commands.json
+│   │   ├── debug.keystore
+│   │   ├── proguard-rules.pro
+│   │   ├── release.keystore
+│   │   └── src
+│   │       └── main
+│   │           ├── AndroidManifest.xml
+│   │           ├── java
+│   │           │   └── com
+│   │           │       └── capcut
+│   │           │           ├── MainActivity.kt
+│   │           │           └── MainApplication.kt
+│   │           └── res
+│   │               ├── drawable
+│   │               │   └── rn_edit_text_material.xml
+│   │               ├── mipmap-hdpi
+│   │               │   ├── ic_launcher.png
+│   │               │   └── ic_launcher_round.png
+│   │               ├── mipmap-mdpi
+│   │               │   ├── ic_launcher.png
+│   │               │   └── ic_launcher_round.png
+│   │               ├── mipmap-xhdpi
+│   │               │   ├── ic_launcher.png
+│   │               │   └── ic_launcher_round.png
+│   │               ├── mipmap-xxhdpi
+│   │               │   ├── ic_launcher.png
+│   │               │   └── ic_launcher_round.png
+│   │               ├── mipmap-xxxhdpi
+│   │               │   ├── ic_launcher.png
+│   │               │   └── ic_launcher_round.png
+│   │               └── values
+│   │                   ├── strings.xml
+│   │                   └── styles.xml
+│   ├── build.gradle
+│   ├── .gradle
+│   │   ├── 8.9
+│   │   │   ├── checksums
+│   │   │   │   ├── checksums.lock
+│   │   │   │   ├── md5-checksums.bin
+│   │   │   │   └── sha1-checksums.bin
+│   │   │   ├── dependencies-accessors
+│   │   │   │   ├── 7fcb0c0ad2c738bd0405efd8c2e211751e56733e
+│   │   │   │   │   ├── classes
+│   │   │   │   │   │   └── org
+│   │   │   │   │   │       └── gradle
+│   │   │   │   │   │           └── accessors
+│   │   │   │   │   │               └── dm
+│   │   │   │   │   │                   ├── LibrariesForLibs$AndroidGradleLibraryAccessors.class
+│   │   │   │   │   │                   ├── LibrariesForLibs$AndroidLibraryAccessors.class
+│   │   │   │   │   │                   ├── LibrariesForLibs$BundleAccessors.class
+│   │   │   │   │   │                   ├── LibrariesForLibs$KotlinGradleLibraryAccessors.class
+│   │   │   │   │   │                   ├── LibrariesForLibs$KotlinLibraryAccessors.class
+│   │   │   │   │   │                   ├── LibrariesForLibs$KotlinPluginAccessors.class
+│   │   │   │   │   │                   ├── LibrariesForLibs$PluginAccessors.class
+│   │   │   │   │   │                   ├── LibrariesForLibs$VersionAccessors.class
+│   │   │   │   │   │                   ├── LibrariesForLibs.class
+│   │   │   │   │   │                   ├── LibrariesForLibsInPluginsBlock$AndroidGradleLibraryAccessors.class
+│   │   │   │   │   │                   ├── LibrariesForLibsInPluginsBlock$AndroidLibraryAccessors.class
+│   │   │   │   │   │                   ├── LibrariesForLibsInPluginsBlock$BundleAccessors.class
+│   │   │   │   │   │                   ├── LibrariesForLibsInPluginsBlock$KotlinGradleLibraryAccessors.class
+│   │   │   │   │   │                   ├── LibrariesForLibsInPluginsBlock$KotlinLibraryAccessors.class
+│   │   │   │   │   │                   ├── LibrariesForLibsInPluginsBlock$KotlinPluginAccessors.class
+│   │   │   │   │   │                   ├── LibrariesForLibsInPluginsBlock$PluginAccessors.class
+│   │   │   │   │   │                   ├── LibrariesForLibsInPluginsBlock$VersionAccessors.class
+│   │   │   │   │   │                   └── LibrariesForLibsInPluginsBlock.class
+│   │   │   │   │   ├── metadata.bin
+│   │   │   │   │   └── sources
+│   │   │   │   │       └── org
+│   │   │   │   │           └── gradle
+│   │   │   │   │               └── accessors
+│   │   │   │   │                   └── dm
+│   │   │   │   │                       ├── LibrariesForLibsInPluginsBlock.java
+│   │   │   │   │                       └── LibrariesForLibs.java
+│   │   │   │   └── gc.properties
+│   │   │   ├── expanded
+│   │   │   ├── fileChanges
+│   │   │   │   └── last-build.bin
+│   │   │   ├── fileHashes
+│   │   │   │   ├── fileHashes.bin
+│   │   │   │   ├── fileHashes.lock
+│   │   │   │   └── resourceHashesCache.bin
+│   │   │   ├── gc.properties
+│   │   │   └── vcsMetadata
+│   │   ├── 9.3.1
+│   │   │   ├── checksums
+│   │   │   │   ├── checksums.lock
+│   │   │   │   ├── md5-checksums.bin
+│   │   │   │   └── sha1-checksums.bin
+│   │   │   ├── executionHistory
+│   │   │   │   ├── executionHistory.bin
+│   │   │   │   └── executionHistory.lock
+│   │   │   ├── expanded
+│   │   │   ├── fileChanges
+│   │   │   │   └── last-build.bin
+│   │   │   ├── fileHashes
+│   │   │   │   ├── fileHashes.bin
+│   │   │   │   ├── fileHashes.lock
+│   │   │   │   └── resourceHashesCache.bin
+│   │   │   ├── gc.properties
+│   │   │   └── vcsMetadata
+│   │   ├── buildOutputCleanup
+│   │   │   ├── buildOutputCleanup.lock
+│   │   │   ├── cache.properties
+│   │   │   └── outputFiles.bin
+│   │   ├── file-system.probe
+│   │   ├── noVersion
+│   │   │   └── buildLogic.lock
+│   │   └── vcs-1
+│   │       └── gc.properties
+│   ├── gradle
+│   │   └── wrapper
+│   │       ├── gradle-wrapper.jar
+│   │       └── gradle-wrapper.properties
+│   ├── gradle.properties
+│   ├── gradlew
+│   ├── gradlew.bat
+│   ├── .kotlin
+│   │   └── sessions
+│   └── settings.gradle
+├── app.json
+├── App.tsx
+├── arborescence.txt
+├── babel.config.js
+├── .bundle
+│   └── config
+├── .env
+├── .eslintrc.js
+├── Gemfile
+├── .gitignore
+├── index.js
+├── ios
+│   ├── CapCut
+│   │   ├── AppDelegate.swift
+│   │   ├── Images.xcassets
+│   │   │   ├── AppIcon.appiconset
+│   │   │   │   └── Contents.json
+│   │   │   └── Contents.json
+│   │   ├── Info.plist
+│   │   ├── LaunchScreen.storyboard
+│   │   └── PrivacyInfo.xcprivacy
+│   ├── CapCut.xcodeproj
+│   │   ├── project.pbxproj
+│   │   └── xcshareddata
+│   │       └── xcschemes
+│   │           └── CapCut.xcscheme
+│   ├── Podfile
+│   └── .xcode.env
+├── jest.config.js
+├── metro.config.js
+├── package.json
+├── package-lock.json
+├── .prettierrc.js
+├── README.md
+├── src
+│   ├── assets
+│   ├── components
+│   │   └── auth
+│   │       ├── AuthInput.tsx
+│   │       ├── Avatar.tsx
+│   │       └── SocialButton.tsx
+│   ├── context
+│   │   └── ThemeContext.tsx
+│   ├── hooks
+│   │   └── useAuth.ts
+│   ├── locales
+│   │   ├── en.json
+│   │   ├── es.json
+│   │   ├── fr.json
+│   │   └── i18n.ts
+│   ├── navigation
+│   │   ├── AuthNavigator.tsx
+│   │   └── HomeNavigator.tsx
+│   ├── screens
+│   │   ├── auth
+│   │   │   ├── ForgotPasswordScreen.tsx
+│   │   │   ├── LoginScreen.tsx
+│   │   │   ├── RegisterScreen.tsx
+│   │   │   └── WelcomeScreen.tsx
+│   │   ├── editor
+│   │   │   └── VideoEditorScreen.tsx
+│   │   ├── guide
+│   │   │   └── GuidePro.tsx
+│   │   ├── profile
+│   │   │   └── ProfileScreen.tsx
+│   │   └── project
+│   │       └── EditProjectScreen.tsx
+│   ├── services
+│   │   ├── authService.ts
+│   │   ├── notificationService.ts
+│   │   ├── screen
+│   │   │   └── DashboardProjectsScreen.tsx
+│   │   └── supabase.ts
+│   ├── theme
+│   ├── types
+│   │   └── env.d.ts
+│   └── utils
+├── __tests__
+│   └── App.test.tsx
+├── tsconfig.json
+├── .vscode
+│   └── settings.json
+└── .watchmanconfig
+
+712 directories, 770 files

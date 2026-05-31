@@ -7,7 +7,6 @@ import es from './es.json';
 i18n
   .use(initReactI18next)
   .init({
-    compatibilityJSON: 'v3',
     resources: { fr: { translation: fr }, en: { translation: en }, es: { translation: es } },
     lng: 'fr',
     fallbackLng: 'fr',

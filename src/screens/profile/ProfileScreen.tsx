@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useCallback } from 'react';
 import {
   View, Text, TouchableOpacity, StyleSheet, SafeAreaView,
   ScrollView, ActivityIndicator, Alert, Switch,
@@ -29,15 +29,7 @@ export default function ProfileScreen() {
 
   const provider = user?.app_metadata?.provider || 'email';
 
-  // Recharger les stats à chaque fois que l'écran est focus
-  useFocusEffect(
-    useCallback(() => {
-      chargerProfil();
-      chargerStats();
-    }, [user])
-  );
-
-  const chargerProfil = async () => {
+  const chargerProfil = useCallback(async () => {
     if (!user) return;
     try {
       const { data } = await supabase.from('profiles').select('*').eq('id', user.id).single();
@@ -46,15 +38,13 @@ export default function ProfileScreen() {
         setName(data.full_name || user?.user_metadata?.full_name || '');
       }
     } catch {}
-  };
+  }, [user]);
 
-  const chargerStats = async () => {
+  const chargerStats = useCallback(async () => {
     if (!user) return;
     try {
       const { count: nbProjets } = await supabase
         .from('projets').select('*', { count: 'exact', head: true }).eq('user_id', user.id);
-      const { count: nbVideos } = await supabase
-        .from('medias_secondaires').select('*', { count: 'exact', head: true }).eq('user_id', user.id);
       const { count: nbExports } = await supabase
         .from('exportations').select('*', { count: 'exact', head: true }).eq('user_id', user.id);
       // Compter les projets avec vidéo
@@ -67,7 +57,15 @@ export default function ProfileScreen() {
         vues: (nbExports || 0) * 12 + (nbProjets || 0) * 3,
       });
     } catch {}
-  };
+  }, [user]);
+
+  // Recharger les stats à chaque fois que l'écran est focus
+  useFocusEffect(
+    useCallback(() => {
+      chargerProfil();
+      chargerStats();
+    }, [chargerProfil, chargerStats])
+  );
 
   const demanderPermissionPhoto = async () => {
     if (Platform.OS !== 'android') return true;
@@ -193,7 +191,7 @@ export default function ProfileScreen() {
             <TouchableOpacity onPress={modifierPhoto} disabled={uploadingAvatar} style={s.avatarContainer}>
               {uploadingAvatar
                 ? <View style={s.avatarLoader}><ActivityIndicator color={colors.primary} /></View>
-                : <Avatar name={name || user?.email || '?'} size={64} onPress={modifierPhoto} />
+                : <Avatar name={name || user?.email || '?'} size={64} uri={avatarUrl} onPress={modifierPhoto} />
               }
             </TouchableOpacity>
             <View style={s.headerInfo}>

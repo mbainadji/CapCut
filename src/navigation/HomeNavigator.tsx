@@ -6,12 +6,14 @@ import DashboardProjectsScreen from '../services/screen/DashboardProjectsScreen'
 import ProfileScreen from '../screens/profile/ProfileScreen';
 import EditProjectScreen from '../screens/project/EditProjectScreen';
 import VideoEditorScreen from '../screens/editor/VideoEditorScreen';
+import GuidePro from '../screens/guide/GuidePro';
 import { colors } from '../context/ThemeContext';
 
 export type HomeStackParamList = {
   Dashboard: undefined;
   EditProject: { projectId: string };
   VideoEditor: { projetId: string; videoUri: string; nomProjet: string };
+  GuidePro: undefined;
   Profile: undefined;
 };
 
@@ -66,6 +68,7 @@ export default function HomeNavigator() {
       <Stack.Screen name="Dashboard" component={TabNavigator} />
       <Stack.Screen name="EditProject" component={EditProjectScreen} />
       <Stack.Screen name="VideoEditor" component={VideoEditorScreen} />
+      <Stack.Screen name="GuidePro" component={GuidePro} />
     </Stack.Navigator>
   );
 }
