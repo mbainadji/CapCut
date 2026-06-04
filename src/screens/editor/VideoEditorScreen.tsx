@@ -638,7 +638,15 @@ export default function VideoEditorScreen({ navigation, route }: any) {
           </View>
         )}
 
-        <TouchableOpacity style={s.btnTelephone} onPress={enregistrerSurTelephone} disabled={loading}>
+        <TouchableOpacity style={s.btnAdvanced} onPress={() => navigation.navigate('AdvancedEditor', {
+        videoUri: videoUriNormalise,
+        nomProjet: nomProjet,
+        projetId: projetId,
+      })}>
+        <Text style={s.btnAdvancedText}>✂️ Découpage avancé (Timeline + IA)</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={s.btnTelephone} onPress={enregistrerSurTelephone} disabled={loading}>
           {loading ? <ActivityIndicator color={colors.white} />
             : <Text style={s.btnTelephoneText}>📱 Enregistrer sur téléphone</Text>}
         </TouchableOpacity>
@@ -760,6 +768,8 @@ const s = StyleSheet.create({
   dureeItemTexte: { fontSize: 10, color: colors.danger },
   dureeItemTexteOk: { color: colors.success },
   btnTelephone: { backgroundColor: colors.primary, margin: 16, borderRadius: 12, padding: 16, alignItems: 'center', elevation: 2 },
+  btnAdvanced: { backgroundColor: colors.primaryDark || '#0097A7', margin: 16, marginBottom: 0, borderRadius: 12, padding: 14, alignItems: 'center' },
+  btnAdvancedText: { color: colors.white, fontSize: 14, fontWeight: '700' },
   btnTelephoneText: { color: colors.white, fontSize: 15, fontWeight: 'bold' },
   modalOverlay: { flex: 1, backgroundColor: '#00000066', justifyContent: 'flex-end' },
   modalContent: { backgroundColor: colors.white, borderTopLeftRadius: 20, borderTopRightRadius: 20, padding: 20 },

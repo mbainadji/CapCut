@@ -20,11 +20,21 @@ buildscript {
 
 apply plugin: "com.facebook.react.rootproject"
 
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
+}
+
 subprojects {
     configurations.all {
         resolutionStrategy {
             force 'androidx.sqlite:sqlite-bundled-android:2.6.0'
             force 'androidx.sqlite:sqlite:2.6.0'
+            // Rediriger ffmpeg-kit-https vers le fork disponible
+            force 'com.moizhassan.ffmpeg:ffmpeg-kit-16kb:6.1.1'
         }
     }
 }
